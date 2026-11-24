@@ -63,6 +63,19 @@ svg .hotp:hover{filter:drop-shadow(0 0 8px #ffd84a)}
 .score span{float:left;font:600 9px/22px Jost,sans-serif;color:#9fb3ff;letter-spacing:.1em}
 .gems{display:flex;gap:4px;justify-content:center}
 .gem{width:22px;height:28px;opacity:.95}
+.gem.stampgem{width:24px;height:24px;margin-top:2px;background:#f4e7c3;border-radius:50%}
+.gem.stampgem svg{display:block;width:24px;height:24px}
+.platestamp{position:absolute;width:30px;height:30px;background:#f4e7c3;border-radius:50%;transform:rotate(-12deg);box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.terminal.handson{background:linear-gradient(180deg,#c8894a,#8a5524);border-color:#5a3a14}
+.terminal.handson .crt{background:radial-gradient(ellipse at 50% 35%,#24684a,#0c2a1d)}
+.terminal.handson .crt::after{display:none}
+.passport{width:720px}
+.pprows{display:flex;flex-direction:column;gap:6px}
+.pprow{display:flex;align-items:center;gap:12px;background:#fbf3dc;border:2px solid #c9b98f;border-radius:6px;padding:6px 10px;text-align:left;cursor:pointer;font:inherit;color:inherit}
+.pprow:hover,.pprow:focus-visible{border-color:#6b4a22;background:#fff8e6}
+.ppstamp{width:34px;height:34px;flex:none}.ppstamp svg{width:34px;height:34px;display:block}
+.pptxt{flex:1;display:flex;flex-direction:column}.pptxt b{font:700 15px Cinzel,Georgia,serif;color:#1B2A6B}.pptxt small{font:13px Jost,sans-serif;color:#6b5f48}
+.ppgo{font:600 13px Jost,sans-serif;color:#7a2433}
 .gem.empty{width:22px;height:22px;border-radius:50%;margin-top:4px;background:#2a1d0c;border:2px dashed #8a6a2a;opacity:.8}
 .btns{flex:none;display:flex;gap:6px}
 .btn{width:64px;height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:linear-gradient(180deg,#e9e3d0,#c9c0a6);border:2px solid;border-color:#fff #5b5240 #5b5240 #fff;border-radius:6px;font:600 11px/1.1 Jost,sans-serif;color:#1b1b1b;cursor:pointer;padding:0}
@@ -116,6 +129,8 @@ svg .hotp:hover{filter:drop-shadow(0 0 8px #ffd84a)}
 .opt.wrong{background:linear-gradient(180deg,#ffe1e1,#f08a8a);border-color:#D62828}
 .opt[disabled]{cursor:default}
 .explain{margin-top:12px;background:rgba(255,255,255,.1);border-left:4px solid #FFC72C;padding:8px 12px;font:14px/1.45 Georgia,serif;color:#e8eeff}
+.report{background:none;border:1px solid rgba(255,255,255,.35);border-radius:4px;color:#cfd8ff;font:12px Jost,sans-serif;padding:5px 9px;cursor:pointer}
+.report:hover{border-color:#ffb3b3;color:#ffd6d6}.report.done{border:0;color:#9fe0ff;cursor:default}
 .verdict{font:700 22px/1 Cinzel,Georgia,serif;color:#FFC72C;margin-bottom:4px}
 .pts{display:inline-block;margin-left:10px;font:900 22px/1 Cinzel,Georgia,serif;color:#8fe07a;animation:pop .5s ease-out}
 @keyframes pop{from{transform:scale(1.8);opacity:0}to{transform:scale(1);opacity:1}}
@@ -170,6 +185,20 @@ svg .hotp:hover{filter:drop-shadow(0 0 8px #ffd84a)}
 .choices{max-height:160px;overflow:auto;margin-top:8px;font:14px Georgia,serif}
 .choices button{display:block;text-align:left;width:100%;background:none;border:0;border-bottom:1px solid #e1d6bd;padding:6px 2px;cursor:pointer;font:inherit;color:#1B2A6B}
 .choices button:hover{background:#fff3c4}
+.shelf{position:absolute;left:50%;top:462px;transform:translateX(-50%);width:880px;padding:8px 14px 0;background:linear-gradient(180deg,rgba(91,56,22,.92),rgba(60,36,12,.95));border:3px solid #3b2408;border-radius:8px 8px 4px 4px;box-shadow:0 12px 30px rgba(0,0,0,.5),inset 0 -14px 0 #8a5524}
+.shelf h2{margin:0 0 6px;font:700 13px Cinzel,Georgia,serif;letter-spacing:.14em;color:#f4e7c3}
+.books{display:flex;gap:10px;overflow-x:auto;padding:0 2px 18px;scrollbar-width:thin}
+.bookwrap{position:relative;flex:none}
+.book{position:relative;display:flex;flex-direction:column;width:112px;height:142px;padding:6px;border:0;border-radius:3px 6px 6px 3px;background:#fbf3dc;box-shadow:inset 6px 0 0 #7a2433,0 4px 8px rgba(0,0,0,.45);cursor:pointer;text-align:left;font:inherit;color:#2b1d05}
+.book:hover{transform:translateY(-3px)}
+.bthumb{display:block;height:70px;margin-left:6px;overflow:hidden;background:#e8dcc0;border-radius:2px}
+.bthumb img{width:100%;height:100%;object-fit:cover;display:block}
+.bmono{display:grid;place-items:center;height:100%;font:700 34px Cinzel,Georgia,serif;color:#7a2433}
+.btitle{margin:5px 0 0 6px;font:700 12px/1.2 Cinzel,Georgia,serif;color:#1B2A6B;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.bmeta{margin:auto 0 0 6px;font:11px Jost,sans-serif;color:#6b5f48}.bmeta b{color:#2f7d3b}
+.ribbon{position:absolute;right:8px;top:-4px;width:14px;height:26px;background:#D62828;clip-path:polygon(0 0,100% 0,100% 100%,50% 75%,0 100%)}
+.unshelve{position:absolute;right:-6px;top:-6px;width:22px;height:22px;border-radius:50%;border:2px solid #3b2408;background:#f4e7c3;font:700 11px Jost,sans-serif;color:#3b2408;cursor:pointer;opacity:0;transition:opacity .15s}
+.bookwrap:hover .unshelve,.unshelve:focus-visible{opacity:1}
 .footnote{position:absolute;bottom:10px;left:0;right:0;text-align:center;font:12px Jost,sans-serif;color:#2b1d05;opacity:.8}
 
 /* Certificate */
@@ -278,7 +307,8 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
 .whlist li{font:700 14px Jost,sans-serif;letter-spacing:.08em;background:#1B2A6B;color:#fff;padding:4px 10px;border-radius:12px;border:1px solid #6b7fd0}
 .whlist li.got{background:#3A9D23;text-decoration:line-through}
 .whdef{font:14px/1.45 Georgia,serif;color:#e8eeff;min-height:90px;margin-bottom:10px}
-.mpmap{position:relative;background:#0b3d7a center/100% 100% no-repeat;border:4px solid #fff;border-radius:4px;cursor:crosshair;margin:0 auto}
+.mpmap{width:100%;max-width:560px;aspect-ratio:2/1;position:relative;background:#0b3d7a center/100% 100% no-repeat;border:4px solid #fff;border-radius:4px;cursor:crosshair;margin:0 auto}
+.mpmap:focus-visible{outline:3px solid #FFC72C;outline-offset:3px}
 .mpmap.nomap{background:radial-gradient(ellipse at 50% 50%,#1f7fc4,#0a2f57)}
 .mpmap svg{position:absolute;inset:0;width:100%;height:100%}
 .ls .lsask{font:18px/1.4 Georgia,serif;color:#fff;margin:4px 0 14px}
@@ -292,6 +322,30 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
 #iris.open{width:1500px;height:1500px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 @media (prefers-reduced-motion:reduce){#iris{transition:none}.globe svg,.globe .land{animation:none}.portrait.bob svg{animation:none}}
+/* ---------- phones: the museum shrinks with the window, but overlays (where the reading and playing happen)
+   come out of the scaled window and use the phone's full width at readable size ---------- */
+html.phone #overlay{position:fixed;left:0;top:0;width:100vw;height:100vh;height:100dvh;z-index:50;place-items:start center;overflow:auto;padding:6px 0 70px}
+html.phone .panel{width:calc(100vw - 12px)!important;max-width:none;max-height:none;overflow:visible;margin:0 auto}
+html.phone .terminal{padding:10px 8px;border-radius:14px}
+html.phone .crt{padding:12px;min-height:0}
+html.phone .crt h3{font-size:18px}
+html.phone .crt .top{flex-wrap:wrap;gap:4px;padding-right:40px}
+html.phone .mv{min-width:40px;min-height:36px}
+html.phone .placard{grid-template-columns:1fr}
+html.phone .placard .pic{max-height:46vh}
+html.phone .picq,html.phone .opts,html.phone .lsclips{grid-template-columns:1fr}
+html.phone .zm{grid-template-columns:1fr}html.phone .zm canvas{width:100%;height:auto}
+html.phone .wh{grid-template-columns:1fr}html.phone .whc{width:auto;height:auto;aspect-ratio:1.1;font-size:15px}
+html.phone .mt{grid-template-columns:1fr 40px 1fr}html.phone .mt button{font-size:13px;padding:6px}
+html.phone .actfoot,html.phone .quizfoot{flex-wrap:wrap;gap:8px}
+html.phone .mapbox,html.phone .book,html.phone .cert,html.phone .specplate{padding:14px}
+html.phone .specplate .spread{grid-template-columns:1fr!important}
+html.phone .cert h1{font-size:26px}
+html.phone .shelf{width:96%}
+#caption{display:none}
+html.phone #caption:not(:empty){display:block;position:fixed;left:8px;right:8px;bottom:8px;z-index:60;background:#fbf3dc;border:2px solid #6b4a22;border-radius:8px;padding:8px 12px;font:15px/1.4 Georgia,serif;color:#2b1d05;box-shadow:0 6px 18px rgba(0,0,0,.4)}
+html.phone #caption b{font:700 11px Cinzel,Georgia,serif;letter-spacing:.1em;color:#7a2433;display:block}
+@media (hover:none){.unshelve{opacity:1}}
 @media print{body{background:#fff}#desk>*:not(#stage){display:none}#stage{transform:none!important;box-shadow:none;border:0;width:auto;height:auto;position:static}#titlebar,#console,#scene{display:none}#overlay{position:static;background:none;display:block;height:auto}.cert{margin:0 auto}.noprint{display:none!important}}
 </style>
 </head>
@@ -310,6 +364,7 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     <div id="iris" class="open"></div>
   </div>
 </div>
+<div id="caption" aria-hidden="true"></div>
 <script>
 (() => {
   // src/wiki.js
@@ -425,6 +480,17 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
         const which = oldid ? { oldid: String(oldid) } : { page: title, redirects: "1" };
         const j = await getJSON(action({ action: "parse", ...which, prop: "text|sections|revid|displaytitle", disableeditsection: "1", disabletoc: "1" }));
         return j.parse;
+      },
+      /**
+       * The subject's main picture on Wikidata (property P18), as a "File:…" title, or null. Wikidata only takes
+       * Commons files, so this is always a freely licensed picture: the fallback for articles with no usable images.
+       */
+      async wikidataImage(qid) {
+        if (!/^Q\d+$/.test(qid || "")) return null;
+        const q = new URLSearchParams({ action: "wbgetclaims", entity: qid, property: "P18", format: "json", origin: "*" });
+        const j = await getJSON(`https://www.wikidata.org/w/api.php?${q}`).catch(() => null);
+        const v = j?.claims?.P18?.[0]?.mainsnak?.datavalue?.value;
+        return v ? "File:" + String(v).replace(/_/g, " ") : null;
       },
       /** Permanent link to one revision of an article. */
       revisionUrl: (revId) => `${host}/w/index.php?oldid=${revId}`,
@@ -1070,7 +1136,7 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
   var MAX_FILES = 60;
   var ICONISH = /(Flag of|Commons-logo|Question book|Wiki letter|Wikiquote|Wiktionary|Wikisource|Wikibooks|Wikinews|Wikiversity|Wikivoyage|Wikispecies|Wikidata|Edit-clear|Ambox|Padlock|Symbol (support|oppose)|Folder Hexagonal|Portal-puzzle|Nuvola|Crystal Clear|Speakerlink|Sound-icon|Loudspeaker|Disambig|Increase2?|Decrease|Steady|OOjs|Red pog|Blue pog|Location dot|Pictogram|Icon|Logo|Coat of arms|Seal of|Signature|Emblem of|Lock-|Gnome-|Searchtool|Text document|Office-book|Animation disabled|Star full|Star empty|Cscr-featured|Symbol|P vip|Map marker|Blank map|Locator map|location map|Relief map of|Orthographic projection)/i;
   var FREE = /(cc|creative commons|public domain|\bpd\b|pd-|gfdl|cc0|attribution|no restrictions|free art|copyrighted free use|\bfal\b|bsd|mit|gpl|ogl|open government|copyleft)/i;
-  var SENSITIVE = /\b(war|wars|genocide|holocaust|massacre|pandemic|epidemic|plague|black death|disease|cancer|famine|slavery|slave trade|murder|terrorism|terrorist|attack|bombing|shooting|assassination|execution|suicide|torture|atrocit\w*|ethnic cleansing|invasion|siege|earthquake|tsunami|disaster|death toll|casualties)\b/i;
+  var SENSITIVE = /\b(war|wars|battle|battles|genocide|holocaust|massacre|pandemic|epidemic|plague|black death|disease|cancer|famine|slavery|slave trade|murder|terrorism|terrorist|attack|bombing|shooting|assassination|execution|suicide|torture|atrocit\w*|ethnic cleansing|invasion|siege|earthquake|tsunami|disaster|death toll|casualties)\b/i;
   var stripHtml = (s) => clean(String(s || "").replace(/<[^>]*>/g, " ").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#0?39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&nbsp;/g, " "));
   function audioLabel(caption, file = "") {
     let t = String(caption || "").replace(/^[\s:;,.\-–—]+/, "");
@@ -1157,6 +1223,30 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       rooms = [...rooms].sort((a, b) => b.facts.filter(usable).length - a.facts.filter(usable).length).slice(0, MAX_ROOMS - leadRoom.length).sort((a, b) => a.index - b.index || String(a.id).localeCompare(String(b.id)));
     }
     return [...leadRoom, ...rooms].map(room);
+  }
+  function listEntries(html, parseHTML2, self = "") {
+    const doc = parseHTML2(`<!DOCTYPE html><html><body>${html}</body></html>`);
+    const seen = /* @__PURE__ */ new Set([self]);
+    const out = [];
+    const take = (a, li) => {
+      const href = a?.getAttribute("href") || "";
+      if (!/^(\/wiki\/|\.\/)/.test(href) || href.includes("?") || a.classList.contains("new")) return;
+      const t = decodeURIComponent(href.replace(/^\/wiki\/|^\.\//, "").split("#")[0]).replace(/_/g, " ");
+      if (/^[A-Za-z ]+:/.test(t) || seen.has(t) || /^(List|Lists|Index|Outline) of /i.test(t)) return;
+      seen.add(t);
+      out.push({ title: t, text: clean((li || a).textContent).slice(0, 110) });
+    };
+    for (const tr of doc.querySelectorAll("table.wikitable tr")) {
+      const cell = tr.querySelector('th[scope="row"], td');
+      const a = cell?.querySelector("a[href]");
+      if (a) take(a, a);
+      if (out.length >= 30) return out;
+    }
+    if (out.length < 5) for (const li of doc.querySelectorAll(".mw-parser-output > ul > li, section > ul > li")) {
+      take(li.querySelector("a[href]"), li);
+      if (out.length >= 30) break;
+    }
+    return out;
   }
   async function buildLessonPack(title, wiki2, { parseHTML: parseHTML2, seed, rev, onProgress = () => {
   } } = {}) {
@@ -1265,6 +1355,34 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
         ...credit
       });
     }
+    if (!images.length && summary.wikibase_item && wiki2.wikidataImage) {
+      const file = await wiki2.wikidataImage(summary.wikibase_item).catch(() => null);
+      const ii = file ? (await wiki2.fileInfo([file]).catch(() => /* @__PURE__ */ new Map())).get(file) : null;
+      const ext = ii?.extmetadata || {};
+      const license = stripHtml(ext.LicenseShortName?.value || ext.UsageTerms?.value || "");
+      if (ii && (ii.mime || "").startsWith("image/") && FREE.test(license)) {
+        const caption = stripHtml(ext.ImageDescription?.value || "").slice(0, 160) || display;
+        images.push({
+          id: "img1",
+          file,
+          src: ii.thumburl || ii.url,
+          full: ii.url,
+          width: ii.thumbwidth || ii.width,
+          height: ii.thumbheight || ii.height,
+          mime: ii.mime,
+          caption,
+          shortCaption: shortCaption(caption),
+          section: "s0",
+          lead: true,
+          fromWikidata: true,
+          author: stripHtml(ext.Artist?.value || ext.Credit?.value || "Unknown").slice(0, 120),
+          license,
+          licenseUrl: ext.LicenseUrl?.value || null,
+          page: ii.descriptionurl || `https://commons.wikimedia.org/wiki/${encodeURIComponent(file.replace(/ /g, "_"))}`
+        });
+      }
+      mark("wikidataImage");
+    }
     const rooms = chooseRooms(art.sections);
     const sectionIndex = new Map(art.sections.map((s) => [s.id, s.index]));
     for (const r of rooms) sectionIndex.set(r.id, r.index);
@@ -1317,6 +1435,8 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       };
     });
     const text = (summary.description || "") + " " + (summary.extract || "");
+    const isList = /^(lists?|index|outline|timeline|glossary) of /i.test(display) || /\blist article\b/i.test(summary.description || "");
+    const list = isList ? listEntries(parsed.text, parseHTML2, canonical) : [];
     return {
       kind: "article",
       version: PACK_VERSION,
@@ -1333,6 +1453,7 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       subjectKind: subjectKind(summary.description, summary.extract),
       sensitive: SENSITIVE.test(display + " " + text),
       mode: packRooms.length >= 4 ? "full" : "mini",
+      list,
       lead: { summary: summary.extract || "", image: leadImg?.id || null, coords: summary.coordinates || null, wikidata: summary.wikibase_item || null },
       infobox: art.infobox,
       rooms: packRooms,
@@ -1501,17 +1622,44 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     <rect x="-46" y="140" width="92" height="22" rx="3" fill="#c9a23a" stroke="#7d6219"/><text x="0" y="155" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-size="11" font-weight="700" fill="#3b2a08">CURATOR'S NOTES</text>
   </g>`;
   }
-  function kiosk(x, y, { locked, done }) {
-    const screen = locked ? "#2a2f2c" : "#0b2a6b";
+  function kiosk(x, y, { done }) {
     return `<g transform="translate(${x},${y})">
     <ellipse cx="0" cy="214" rx="70" ry="11" fill="#000" opacity="0.25"/>
     <rect x="-16" y="116" width="32" height="92" fill="#8b8574"/><rect x="-52" y="200" width="104" height="14" rx="4" fill="#6f6a5c"/>
     <rect x="-78" y="0" width="156" height="122" rx="10" fill="#e3dcc6" stroke="#8b8574" stroke-width="3"/>
-    <rect x="-64" y="12" width="128" height="88" rx="10" fill="${screen}" stroke="#5d584a" stroke-width="3"/>
-    ${locked ? `<text x="0" y="52" text-anchor="middle" font-family="Tahoma,Verdana,sans-serif" font-size="11" fill="#8fa89a">EXPLORE FIRST</text><text x="0" y="70" text-anchor="middle" font-family="Tahoma,Verdana,sans-serif" font-size="9.5" fill="#8fa89a">open the display case</text>` : `<text x="0" y="48" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-size="19" font-weight="700" fill="#FFC72C">${done ? "REPLAY" : "QUIZ"}</text><text x="0" y="68" text-anchor="middle" font-family="Tahoma,Verdana,sans-serif" font-size="10" fill="#cfe0ff">touch to begin<animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/></text>`}
+    <rect x="-64" y="12" width="128" height="88" rx="10" fill="#0b2a6b" stroke="#5d584a" stroke-width="3"/>
+    <text x="0" y="42" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-size="15" font-weight="700" fill="#FFC72C">${done ? "REPLAY" : "TEST"}</text>
+    <text x="0" y="60" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-size="15" font-weight="700" fill="#FFC72C">${done ? "QUIZ" : "YOURSELF"}</text>
+    <text x="0" y="80" text-anchor="middle" font-family="Tahoma,Verdana,sans-serif" font-size="9.5" fill="#cfe0ff">optional \xB7 just for fun</text>
     <rect x="-64" y="12" width="128" height="30" rx="10" fill="#fff" opacity="0.08"/>
-    <circle cx="60" cy="111" r="4" fill="${locked ? "#6d6d6d" : "#3A9D23"}"/><rect x="-60" y="107" width="40" height="6" rx="2" fill="#b8b09a"/>
+    <circle cx="60" cy="111" r="4" fill="#3A9D23"/><rect x="-60" y="107" width="40" height="6" rx="2" fill="#b8b09a"/>
   </g>`;
+  }
+  var ACT_GLYPH = {
+    timeline: '<g stroke="#5a3a14" stroke-width="1.5"><rect x="-18" y="-15" width="36" height="8" rx="2" fill="#fff8e6"/><rect x="-18" y="-4" width="36" height="8" rx="2" fill="#fff8e6"/><rect x="-18" y="7" width="36" height="8" rx="2" fill="#fff8e6"/></g><path d="M-12 -11h14M-12 0h18M-12 11h10" stroke="#9a8a6c" stroke-width="2"/>',
+    match: '<g fill="#fff8e6" stroke="#5a3a14" stroke-width="1.5"><rect x="-20" y="-14" width="12" height="9" rx="2"/><rect x="-20" y="4" width="12" height="9" rx="2"/><rect x="8" y="-14" width="12" height="9" rx="2"/><rect x="8" y="4" width="12" height="9" rx="2"/></g><path d="M-8 -9L8 8M-8 8L8 -9" stroke="#D62828" stroke-width="2.4"/>',
+    zoom: '<circle cx="-4" cy="-4" r="12" fill="#cfefff" stroke="#5a3a14" stroke-width="3"/><path d="M5 5l11 11" stroke="#5a3a14" stroke-width="5" stroke-linecap="round"/><g fill="#1f7fc4" opacity=".6"><rect x="-11" y="-11" width="6" height="6"/><rect x="-5" y="-5" width="6" height="6"/></g>',
+    words: '<rect x="-18" y="-18" width="36" height="36" rx="3" fill="#fff8e6" stroke="#5a3a14" stroke-width="1.5"/><text x="0" y="-5" text-anchor="middle" font-family="Tahoma" font-size="10" font-weight="700" fill="#5a3a14">A K O</text><text x="0" y="9" text-anchor="middle" font-family="Tahoma" font-size="10" font-weight="700" fill="#5a3a14">B E E</text><rect x="-15" y="0" width="30" height="12" rx="6" fill="none" stroke="#D62828" stroke-width="2"/>',
+    map: '<circle r="17" fill="#1f7fc4" stroke="#0c3e73" stroke-width="2"/><path d="M-12 -6q6 -5 12 0q2 6 -6 8q-6 0 -6 -8zM4 4q8 0 8 6q-4 6 -9 1z" fill="#5cbf5a"/><path d="M6 -6l-5 -12a6 6 0 1 1 10 0z" fill="#D62828" stroke="#fff" stroke-width="1.5"/>',
+    listen: '<path d="M-16 -6h7l9 -8v28l-9 -8h-7z" fill="#5a3a14"/><path d="M6 -6q5 6 0 12M10 -11q10 11 0 22" stroke="#5a3a14" stroke-width="2.5" fill="none"/>'
+  };
+  function handsOn(x, y, { type, done }) {
+    return `<g transform="translate(${x},${y})">
+    <ellipse cx="0" cy="186" rx="84" ry="11" fill="#000" opacity="0.25"/>
+    <rect x="-66" y="96" width="12" height="86" fill="#5a3a14"/><rect x="54" y="96" width="12" height="86" fill="#5a3a14"/>
+    <rect x="-74" y="146" width="148" height="8" fill="#6b4620"/>
+    <path d="M-82,60 L82,60 L76,100 L-76,100Z" fill="#a8682e" stroke="#5a3a14" stroke-width="2.5"/>
+    <path d="M-74,64 L74,64 L70,94 L-70,94Z" fill="#c8894a"/>
+    <g transform="translate(0,80) scale(1,0.72)">${ACT_GLYPH[type] || ""}</g>
+    <rect x="-56" y="0" width="112" height="40" rx="5" fill="#D62828" stroke="#7a1414" stroke-width="2.5"/>
+    <text x="0" y="18" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-size="14" font-weight="700" fill="#fff8dc">HANDS ON!</text>
+    <text x="0" y="32" text-anchor="middle" font-family="Tahoma,Verdana,sans-serif" font-size="9" fill="#ffe0e0">${done ? "play again" : "touch to play"}</text>
+    <rect x="-3" y="40" width="6" height="22" fill="#5a3a14"/>
+    ${done ? "" : '<circle cx="52" cy="6" r="5" fill="#FFC72C"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/></circle>'}
+  </g>`;
+  }
+  function stamp(n, inked, color = "#1B2A6B") {
+    return inked ? `<svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13" fill="none" stroke="${color}" stroke-width="2.4"/><circle cx="15" cy="15" r="9.5" fill="none" stroke="${color}" stroke-width="1"/><text x="15" y="19.5" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-size="12" font-weight="700" fill="${color}">${n}</text></svg>` : `<svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13" fill="none" stroke="#8a8170" stroke-width="1.6" stroke-dasharray="3 3"/><text x="15" y="19.5" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-size="12" fill="#8a8170">${n}</text></svg>`;
   }
   function mascot(mood = "idle") {
     const mouth = { idle: "M-11,14 Q0,21 11,14", happy: "M-14,11 Q0,28 14,11 Q0,19 -14,11Z", oops: "M-5,16 a5,6 0 1,0 10,0 a5,6 0 1,0 -10,0", think: "M-9,17 L9,15" }[mood] || "";
@@ -1538,6 +1686,7 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     music: '<svg viewBox="0 0 32 32"><path d="M12 6l14-3v18" stroke="#1B2A6B" stroke-width="2.4" fill="none"/><path d="M12 6v18" stroke="#1B2A6B" stroke-width="2.4"/><ellipse cx="9" cy="24" rx="4" ry="3" fill="#1B2A6B"/><ellipse cx="23" cy="21" rx="4" ry="3" fill="#1B2A6B"/></svg>',
     exit: '<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="#1f7fc4" stroke="#0c3e73"/><path d="M6 13q6 2 9-3M14 26q2-6 8-5M20 6q-1 5 5 7" stroke="#5cbf5a" stroke-width="2.4" fill="none"/></svg>',
     options: '<svg viewBox="0 0 32 32"><path d="M16 4l2.2 3.4 4-.8.8 4 3.4 2.2-2 3.2 2 3.2-3.4 2.2-.8 4-4-.8L16 28l-2.2-3.4-4 .8-.8-4L5.6 19.2l2-3.2-2-3.2L9 10.6l.8-4 4 .8z" fill="#8a8a8a" stroke="#3b3b3b"/><circle cx="16" cy="16" r="4.5" fill="#e9e3d0" stroke="#3b3b3b"/></svg>',
+    passport: '<svg viewBox="0 0 32 32"><rect x="7" y="4" width="18" height="24" rx="2" fill="#1B2A6B" stroke="#0b143d"/><circle cx="16" cy="14" r="5" fill="none" stroke="#FFC72C" stroke-width="1.6"/><path d="M11 14h10M16 9q-3 5 0 10q3-5 0-10" stroke="#FFC72C" stroke-width="1.2" fill="none"/><path d="M11 22h10" stroke="#FFC72C" stroke-width="1.6"/></svg>',
     medal: (c) => `<svg viewBox="0 0 24 30"><path d="M6 0h5l2 10-5 2zM18 0h-5l-2 10 5 2z" fill="#1B2A6B"/><circle cx="12" cy="19" r="9" fill="${c}" stroke="#5a4510" stroke-width="1.5"/><path d="M12 13l1.8 3.7 4 .5-3 2.8.8 4-3.6-2-3.6 2 .8-4-3-2.8 4-.5z" fill="#fff" opacity=".7"/></svg>`
   };
   var MEDAL_COLORS = { gold: "#f2c43d", silver: "#c9ced6", bronze: "#c8813c" };
@@ -1738,7 +1887,8 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
   var HINTS_PER_VISIT = 3;
   var HINT_COST = 25;
   var GRAND = { count: 10, seconds: 20 };
-  var RANKS = [[0.95, "Professor Emeritus"], [0.8, "Scholar"], [0.6, "Curator"], [0.4, "Field Researcher"], [0, "Junior Explorer"]];
+  var RANKS = [[0.85, "Professor Emeritus"], [0.6, "Scholar"], [0.4, "Curator"], [0.2, "Field Researcher"], [0, "Museum Explorer"]];
+  var WING_QUIZ = 4;
   var speedBonus = (ms) => Math.max(0, Math.round(50 * (1 - ms / 15e3)));
   var streakMult = (streak) => streak >= 5 ? 2 : streak >= 3 ? 1.5 : 1;
   var pointsFor = (ms, streak, { calm = false } = {}) => calm ? 100 : Math.round((100 + speedBonus(ms)) * streakMult(streak));
@@ -1747,10 +1897,16 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     return p >= 1 ? "gold" : p >= 0.75 ? "silver" : p >= 0.5 ? "bronze" : null;
   };
   var grandMedalFor = (pct) => pct >= 0.9 ? "gold" : pct >= 0.7 ? "silver" : pct >= 0.5 ? "bronze" : null;
-  function rankFor(medals, grandPct) {
+  function rankFor({ handsOn: handsOn2 = 0, medals = [], grandPct = 0 } = {}) {
     const m = medals.length ? medals.reduce((a, x) => a + (MEDAL_RANK[x] || 0), 0) / (3 * medals.length) : 0;
-    const share = 0.6 * m + 0.4 * (grandPct || 0);
+    const share = 0.4 * handsOn2 + 0.35 * m + 0.25 * (grandPct || 0);
     return { share, rank: RANKS.find(([t]) => share >= t)[1] };
+  }
+  var slotKey = (id, slot) => `${id}:${slot.kind}:${slot.kind === "img" ? slot.im.id : slot.kind === "quote" ? slot.fact.id : "card"}`;
+  function wingProgress(w, visited) {
+    const keys = [...w.slots.map((sl) => slotKey(w.room.id, sl)), `${w.room.id}:case`];
+    const seen = keys.filter((k) => visited.has(k)).length;
+    return { seen, total: keys.length, stamped: seen === keys.length };
   }
   function fiftyFifty(q, rnd) {
     if (q.options.length !== 4) return [];
@@ -1776,21 +1932,25 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       const facts = w.room.facts.map((id) => fact[id]).filter((f) => f && f.words >= 8 && f.words <= 30);
       const quotes = [...facts.filter((f) => !w.room.discovery.includes(f.id)), ...facts.filter((f) => w.room.discovery.slice(2).includes(f.id))];
       while (w.slots.length < 3 && quotes.length) w.slots.push({ kind: "quote", fact: quotes.shift() });
+      if (!w.slots.length) {
+        const any = w.room.facts.map((id) => fact[id]).filter((f) => f && f.words >= 5 && f.words <= 50);
+        any.slice(0, 2).forEach((f) => w.slots.push({ kind: "quote", fact: f }));
+      }
     }
     return wings;
   }
-  function pickQuestions(pack, room, attempt, key, activityType = null) {
+  function pickQuestions(pack, room, attempt, key, activityType = null, { count = 5 } = {}) {
     const q = Object.fromEntries(pack.questions.map((x) => [x.id, x]));
     const rnd = mulberry32(hashString(key + room.id + ":" + attempt));
     const act = activityType ? buildActivity(pack, room, activityType, attempt, key) : null;
     let pool = room.questions.map((id) => q[id]).filter((x) => x && !(act?.type === "zoom" && x.id === act.q.id));
-    if (pool.length < 3) pool = pool.concat(shuffle(pack.questions.filter((x) => !pool.includes(x) && x.type !== "pictureId"), rnd).slice(0, 5 - pool.length));
+    if (pool.length < 3) pool = pool.concat(shuffle(pack.questions.filter((x) => !pool.includes(x) && x.type !== "pictureId"), rnd).slice(0, count - pool.length));
     const by = (t) => shuffle(pool.filter((x) => x.type === t), rnd);
     const pic = by("pictureId"), fib = by("factOrFib"), gap = by("fillGap");
     const chosen = [];
     if (pic[0]) chosen.push(pic[0]);
     if (fib[0]) chosen.push(fib[0]);
-    const cap = act ? 4 : 5;
+    const cap = act ? Math.min(4, count) : count;
     for (const x of [...gap, ...fib.slice(1), ...pic.slice(1)]) {
       if (chosen.length >= cap) break;
       chosen.push(x);
@@ -2317,8 +2477,8 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     const N = act.grid.length;
     const found = /* @__PURE__ */ new Set();
     let first = null, gaveUp = false;
-    host.innerHTML = `<div class="wh"><div class="whgrid" role="grid" style="grid-template-columns:repeat(${N},1fr)">${act.grid.map((row, r) => [...row].map((ch, c) => `<button class="whc" data-r="${r}" data-c="${c}" aria-label="${ch}, row ${r + 1}, column ${c + 1}">${ch}</button>`).join("")).join("")}</div>
-    <div class="whside"><ul class="whlist">${act.words.map((w) => `<li data-w="${w.word}">${w.word}</li>`).join("")}</ul><div class="whdef" id="whdef">Click the first letter of a word, then its last letter.</div>
+    host.innerHTML = `<div class="wh"><div class="whgrid" role="grid" style="grid-template-columns:repeat(${N},1fr)">${act.grid.map((row, r) => [...row].map((ch, c) => `<button class="whc" data-r="${r}" data-c="${c}" tabindex="${r || c ? -1 : 0}" aria-label="${ch}, row ${r + 1}, column ${c + 1}">${ch}</button>`).join("")).join("")}</div>
+    <div class="whside"><ul class="whlist">${act.words.map((w) => `<li data-w="${w.word}">${w.word}</li>`).join("")}</ul><div class="whdef" id="whdef" aria-live="polite">Click the first letter of a word, then its last letter. (Keyboard: arrow keys move, Enter picks.)</div>
     <button class="wbtn" id="giveup">Show me the answers</button></div></div>`;
     const cell = (r, c) => host.querySelector(`.whc[data-r="${r}"][data-c="${c}"]`);
     const mark = (w, cls) => {
@@ -2362,6 +2522,17 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       }
       first = null;
     }));
+    host.querySelector(".whgrid").addEventListener("keydown", (e) => {
+      const d = { ArrowUp: [-1, 0], ArrowDown: [1, 0], ArrowLeft: [0, -1], ArrowRight: [0, 1] }[e.key];
+      const b = e.target.closest(".whc");
+      if (!d || !b) return;
+      e.preventDefault();
+      const r = Math.min(N - 1, Math.max(0, +b.dataset.r + d[0])), c = Math.min(N - 1, Math.max(0, +b.dataset.c + d[1]));
+      const nb = cell(r, c);
+      b.tabIndex = -1;
+      nb.tabIndex = 0;
+      nb.focus();
+    });
     host.querySelector("#giveup").addEventListener("click", () => {
       gaveUp = true;
       act.words.filter((w) => !found.has(w.word)).forEach((w) => mark(w, "miss"));
@@ -2382,8 +2553,8 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
   function map(host, act, ctx2) {
     const W2 = 560, H2 = 280;
     let pin = null;
-    host.innerHTML = `<div class="mp"><div class="mpmap" id="mpmap" style="width:${W2}px;height:${H2}px"><svg viewBox="0 0 ${W2} ${H2}" id="mpsvg"></svg></div>
-    <div class="actfoot"><span class="acthint" id="mphint">Click the map to drop your pin. Within ${act.passKm.toLocaleString()} km counts as correct.</span><button class="wbtn gold" id="actcheck" disabled>Lock in my guess \u25B8</button></div></div>`;
+    host.innerHTML = `<div class="mp"><div class="mpmap" id="mpmap" tabindex="0" role="application" aria-label="World map. Arrow keys move your pin, Shift moves it further, Enter locks in your guess."><svg viewBox="0 0 ${W2} ${H2}" id="mpsvg"></svg></div>
+    <div class="actfoot"><span class="acthint" id="mphint" aria-live="polite">Click the map to drop your pin (or use the arrow keys). Within ${act.passKm.toLocaleString()} km counts as correct.</span><button class="wbtn gold" id="actcheck" disabled>Lock in my guess \u25B8</button></div></div>`;
     const svg = host.querySelector("#mpsvg"), mapEl = host.querySelector("#mpmap");
     const grat = Array.from({ length: 11 }, (_, i) => `<line x1="${i * W2 / 12 + W2 / 12}" y1="0" x2="${i * W2 / 12 + W2 / 12}" y2="${H2}"/>`).join("") + Array.from({ length: 5 }, (_, i) => `<line x1="0" y1="${i * H2 / 6 + H2 / 6}" x2="${W2}" y2="${i * H2 / 6 + H2 / 6}"/>`).join("");
     const xy = (lat, lon) => [(lon + 180) / 360 * W2, (90 - lat) / 180 * H2];
@@ -2411,6 +2582,24 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       if (host.querySelector("#actcheck")?.dataset.done) return;
       const r = mapEl.getBoundingClientRect();
       place((e.clientX - r.left) / r.width * W2, (e.clientY - r.top) / r.height * H2);
+    });
+    const where = () => {
+      const lon = pin[0] / W2 * 360 - 180, lat = 90 - pin[1] / H2 * 180;
+      return `${Math.abs(lat).toFixed(0)}\xB0 ${lat >= 0 ? "N" : "S"}, ${Math.abs(lon).toFixed(0)}\xB0 ${lon >= 0 ? "E" : "W"}`;
+    };
+    mapEl.addEventListener("keydown", (e) => {
+      if (host.querySelector("#actcheck")?.dataset.done || !host.querySelector("#actcheck")) return;
+      const step = e.shiftKey ? 40 : 10;
+      const d = { ArrowUp: [0, -step], ArrowDown: [0, step], ArrowLeft: [-step, 0], ArrowRight: [step, 0] }[e.key];
+      if (d) {
+        e.preventDefault();
+        const [x, y] = pin || [W2 / 2, H2 / 2];
+        place(Math.min(W2, Math.max(0, x + d[0])), Math.min(H2, Math.max(0, y + d[1])));
+        host.querySelector("#mphint").textContent = `Pin at ${where()}. Enter locks it in.`;
+      } else if ((e.key === "Enter" || e.key === " ") && pin) {
+        e.preventDefault();
+        check();
+      }
     });
     const check = () => {
       const lon = pin[0] / W2 * 360 - 180, lat = 90 - pin[1] / H2 * 180;
@@ -2504,10 +2693,18 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
   var gemsEl = $("#gems");
   var btnsEl = $("#btns");
   var scale = 1;
+  var captionEl = $("#caption");
   function fit() {
     const w = 964, h = 750;
     scale = Math.min(innerWidth / w, innerHeight / h);
-    stage.style.transform = `translate(${Math.max(0, (innerWidth - w * scale) / 2)}px, ${Math.max(0, (innerHeight - h * scale) / 2)}px) scale(${scale})`;
+    const phone = scale < 0.72;
+    document.documentElement.classList.toggle("phone", phone);
+    if (phone && overlay.parentElement !== document.body) document.body.appendChild(overlay);
+    if (!phone && overlay.parentElement !== stage) stage.appendChild(overlay);
+    const spare = innerHeight - h * scale;
+    const top = phone && spare > 110 ? Math.max(0, spare / 2 - 50) : Math.max(0, spare / 2);
+    stage.style.transform = `translate(${Math.max(0, (innerWidth - w * scale) / 2)}px, ${top}px) scale(${scale})`;
+    captionEl.hidden = !(phone && spare > 110);
   }
   addEventListener("resize", fit);
   fit();
@@ -2533,6 +2730,37 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     grand: null,
     grandAttempts: 0
   };
+  var SHELF = "wq98:shelf";
+  var BANNED = "wq98:banned";
+  var qSig = (q) => String(hashString(`${q.stem}|${q.answerText}`));
+  var bannedSet = () => new Set(store.get(BANNED, {})[G.pack?.canonical] || []);
+  function banQuestion(q) {
+    const all = store.get(BANNED, {});
+    all[G.pack.canonical] = [.../* @__PURE__ */ new Set([...all[G.pack.canonical] || [], qSig(q)])];
+    store.set(BANNED, all);
+  }
+  function livePack() {
+    const ban = bannedSet();
+    if (!ban.size) return G.pack;
+    const ok = (id) => G.q[id] && !ban.has(qSig(G.q[id]));
+    return { ...G.pack, questions: G.pack.questions.filter((q) => !ban.has(qSig(q))), rooms: G.pack.rooms.map((r) => ({ ...r, questions: r.questions.filter(ok) })) };
+  }
+  function shelve() {
+    if (!G.pack || !G.wings.length) return;
+    const lead = G.img[G.pack.lead.image];
+    const list = store.get(SHELF, []).filter((e) => e.canonical !== G.pack.canonical);
+    list.unshift({
+      title: G.pack.title,
+      canonical: G.pack.canonical,
+      rev: G.pack.revId,
+      seed: G.pack.seed,
+      thumb: lead?.src || null,
+      wings: G.wings.length,
+      explored: G.wings.filter((w) => wingProgress(w, G.visited).stamped).length,
+      when: Date.now()
+    });
+    store.set(SHELF, list.slice(0, 12));
+  }
   function save() {
     if (!G.key) return;
     store.set(G.key, {
@@ -2548,6 +2776,7 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       grand: G.grand,
       grandAttempts: G.grandAttempts
     });
+    shelve();
   }
   function addScore(n) {
     G.score = Math.max(0, G.score + n);
@@ -2557,6 +2786,7 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
   var sayToken = 0;
   async function say(text, mood = "idle") {
     const t = ++sayToken;
+    captionEl.innerHTML = `<b>Atlas</b>${esc2(text)}`;
     mascotEl.innerHTML = mascot(mood);
     mascotEl.classList.remove("bob");
     void mascotEl.offsetWidth;
@@ -2630,7 +2860,9 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     busy = false;
   }
   var onOverlayClose = null;
+  var returnFocus = null;
   function openOverlay(html, { onClose } = {}) {
+    if (overlay.hidden) returnFocus = document.activeElement;
     overlay.innerHTML = html;
     overlay.hidden = false;
     tip.hidden = true;
@@ -2651,7 +2883,22 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     const cb = onOverlayClose;
     onOverlayClose = null;
     if (cb && !silent) cb();
+    if (returnFocus && document.contains(returnFocus) && overlay.hidden) returnFocus.focus?.();
+    returnFocus = null;
   }
+  overlay.addEventListener("keydown", (e) => {
+    if (e.key !== "Tab") return;
+    const f = [...overlay.querySelectorAll('button:not([disabled]), a[href], input, select, audio[controls], [tabindex="0"]')].filter((x) => x.offsetParent !== null || x.tagName === "AUDIO");
+    if (!f.length) return;
+    const i = f.indexOf(document.activeElement);
+    if (e.shiftKey && i <= 0) {
+      e.preventDefault();
+      f[f.length - 1].focus();
+    } else if (!e.shiftKey && i === f.length - 1) {
+      e.preventDefault();
+      f[0].focus();
+    }
+  });
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay && G.at !== "title") closeOverlay();
   });
@@ -2678,6 +2925,7 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
   var BUTTONS = [
     ["rotunda", "Rotunda"],
     ["map", "Map"],
+    ["passport", "Passport"],
     ["notebook", "Notebook"],
     ["sound", "Sound"],
     ["options", "Options"],
@@ -2691,8 +2939,8 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
   }
   function renderGems() {
     gemsEl.innerHTML = G.wings.map((w) => {
-      const m = G.medals[w.room.id];
-      return m ? `<span class="gem" title="Wing ${w.i + 1}: ${m} medal">${ICONS.medal(MEDAL_COLORS[m])}</span>` : `<span class="gem empty" title="Wing ${w.i + 1}: no medal yet"></span>`;
+      const pr = wingProgress(w, G.visited), m = G.medals[w.room.id];
+      return `<span class="gem stampgem" title="Wing ${w.i + 1}: ${pr.stamped ? "explored" : `${pr.seen} of ${pr.total} things seen`}${m ? ` \xB7 ${m} quiz medal` : ""}">${stamp(w.i + 1, pr.stamped, w.pal.banner)}</span>`;
     }).join("");
   }
   function consoleAct(k) {
@@ -2701,6 +2949,7 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       if (G.at !== "rotunda") go(renderRotunda);
     } else if (k === "map") openMap();
     else if (k === "notebook") openNotebook();
+    else if (k === "passport") openPassport();
     else if (k === "sound") {
       const on = !(OPTS.sfx || OPTS.music);
       OPTS.sfx = on;
@@ -2722,11 +2971,12 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     return `<svg class="stars" viewBox="0 0 960 720" aria-hidden="true">${s}</svg>`;
   }
   var LAND = '<path d="M60 120q40-30 90-10t60 40q-10 40-50 50t-70-20q-30-30-30-60zM260 80q50-10 80 20t10 70q-20 30-60 20t-40-50q0-40 10-60zM300 260q40 0 60 40t-10 80q-30 20-50-10t0-110zM120 300q30-10 50 20t-10 50q-30 10-40-20t0-50zM420 140q50-20 70 20t-20 60q-40 10-50-20t0-60z" fill="#5cbf5a" opacity=".85"/>';
-  function renderTitle({ loading = false, msg = "", error = "", choices = null } = {}) {
+  var pendingList = null;
+  function renderTitle({ loading = false, msg = "", error = "", choices = null, listOf = null } = {}) {
     G.at = "title";
     stage.classList.add("full");
     closeOverlay(true);
-    const recent = store.get("wq98:recent", []);
+    const shelf = store.get(SHELF, []);
     scene.innerHTML = `<div class="title">
     ${starsSVG()}
     <div class="globe"><svg viewBox="0 0 1040 520" preserveAspectRatio="none" aria-hidden="true"><g>${LAND}</g><g transform="translate(520,0)">${LAND}</g></svg></div>
@@ -2740,11 +2990,17 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
         <ul class="sugg" id="sugg" role="listbox" hidden></ul>
       </div>
       <div class="alt"><button class="wbtn" type="button" id="rand" ${loading ? "disabled" : ""}>Surprise me</button><button class="wbtn" type="button" id="feat" ${loading ? "disabled" : ""}>Today's featured</button>
-        ${recent.length ? `<button class="wbtn" type="button" id="again" ${loading ? "disabled" : ""} title="Return to ${esc2(recent[0])}">Return to ${esc2(recent[0].length > 18 ? recent[0].slice(0, 17) + "\u2026" : recent[0])}</button>` : ""}</div>
+</div>
       ${loading ? `<div class="loading"><div class="bar" id="bar"></div><p id="lmsg">${esc2(msg)}</p></div>` : ""}
       ${error ? `<p class="err">${esc2(error)}</p>` : ""}
+      ${listOf ? `<p class="sub" style="margin-top:10px">\u201C${esc2(listOf.title)}\u201D is a list of ${listOf.list.length >= 30 ? "many" : listOf.list.length} things. Pick one to visit its exhibit:</p><div class="choices">${listOf.list.map((o) => `<button type="button" data-t="${esc2(o.title)}">${esc2(o.text || o.title)}</button>`).join("")}</div>
+        <div style="margin-top:8px;text-align:right"><button class="wbtn" type="button" id="tourlist">Tour the list itself \u25B8</button></div>` : ""}
       ${choices ? `<p class="sub" style="margin-top:10px">\u201C${esc2(choices.title)}\u201D could mean several things. Pick one:</p><div class="choices">${choices.options.map((o) => `<button type="button" data-t="${esc2(o.title)}">${esc2(o.text)}</button>`).join("")}</div>` : ""}
     </form>
+    ${shelf.length && !loading && !choices && !listOf ? `<section class="shelf" aria-label="Your library of exhibits"><h2>Your library</h2><div class="books">${shelf.map((e, i) => `<div class="bookwrap"><button class="book" type="button" data-i="${i}" title="Return to ${esc2(e.title)}${e.explored === e.wings ? " (fully explored)" : ""}">
+        <span class="bthumb">${e.thumb ? `<img src="${esc2(e.thumb)}" alt="" loading="lazy">` : `<span class="bmono">${esc2(e.title.slice(0, 1))}</span>`}</span>
+        <span class="btitle">${esc2(e.title)}</span><span class="bmeta">${e.explored === e.wings ? "<b>\u2713 Explored</b>" : `${e.explored}/${e.wings} wings`}</span>${e.explored === e.wings ? '<span class="ribbon" aria-hidden="true"></span>' : ""}</button>
+        <button class="unshelve" type="button" data-i="${i}" aria-label="Remove ${esc2(e.title)} from your library">\u2715</button></div>`).join("")}</div></section>` : ""}
     <p class="footnote">Text and pictures come live from Wikipedia and Wikimedia Commons under their free licenses. Credits are shown with every exhibit.</p>
   </div>`;
     const q = $("#q"), sugg = $("#sugg");
@@ -2819,10 +3075,27 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
         renderTitle({ error: e.message });
       }
     });
-    $("#again")?.addEventListener("click", () => visit(recent[0]));
+    scene.querySelectorAll(".book").forEach((b) => b.addEventListener("click", () => {
+      const e = shelf[+b.dataset.i];
+      visit(e.title, { rev: e.rev, seed: e.seed ?? void 0, resume: true });
+    }));
+    scene.querySelectorAll(".unshelve").forEach((b) => b.addEventListener("click", () => {
+      const e = shelf[+b.dataset.i];
+      store.set(SHELF, shelf.filter((x) => x !== e));
+      sound.play("click");
+      renderTitle({});
+    }));
     scene.querySelectorAll(".choices [data-t]").forEach((b) => b.addEventListener("click", () => visit(b.dataset.t)));
+    $("#tourlist")?.addEventListener("click", () => {
+      const p = pendingList;
+      pendingList = null;
+      if (p) {
+        setupPack(p);
+        go(renderExhibitCard);
+      }
+    });
   }
-  async function visit(title, { rev, seed } = {}) {
+  async function visit(title, { rev, seed, resume = false } = {}) {
     sound.unlock();
     sound.play("boot");
     renderTitle({ loading: true, msg: "Unlocking the front doors\u2026" });
@@ -2853,6 +3126,11 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       if (pack.kind === "missing") return renderTitle({ error: `The museum has no exhibit called \u201C${title}\u201D. Try one of the suggestions as you type.` });
       if (pack.kind === "disambiguation") return renderTitle({ choices: pack });
       if (!pack.rooms.length) return renderTitle({ error: `\u201C${pack.title}\u201D is too short to fill a museum wing. Try a longer article.` });
+      if (resume) pack.pinned = false;
+      if (pack.list?.length >= 3 && !resume && !rev) {
+        pendingList = pack;
+        return renderTitle({ listOf: pack });
+      }
       await sleep(250);
       setupPack(pack);
       go(renderExhibitCard);
@@ -2882,13 +3160,11 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     G.hintsUsed = saved?.hintsUsed || 0;
     G.grand = saved?.grand || null;
     G.grandAttempts = saved?.grandAttempts || 0;
-    const recent = store.get("wq98:recent", []).filter((t) => t !== pack.title);
-    store.set("wq98:recent", [pack.title, ...recent].slice(0, 5));
+    shelve();
     stage.classList.remove("full");
     renderConsole();
     sound.ambient(ambientKind());
   }
-  var slotKey = (id, slot) => `${id}:${slot.kind}:${slot.kind === "img" ? slot.im.id : slot.kind === "quote" ? slot.fact.id : "card"}`;
   var COLLAGE = [{ l: 36, t: 250, w: 240, r: -7 }, { l: 684, t: 236, w: 240, r: 6 }, { l: 96, t: 478, w: 200, r: 5 }, { l: 664, t: 478, w: 210, r: -5 }, { l: 28, t: 54, w: 170, r: -4 }, { l: 772, t: 50, w: 160, r: 5 }];
   function typeInto(el, text) {
     if (reduceMotion()) {
@@ -2918,7 +3194,7 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     <div class="cardhead"><div class="eyebrow">WikiQuest '98 presents</div>
       <h1 class="chrome" style="font-size:${fs}px">${esc2(p.title)}</h1>
       ${p.description ? `<p class="cdesc">${esc2(trunc2(p.description, 90))}</p>` : ""}
-      <p class="wingsline">An exhibit in ${G.wings.length} wing${G.wings.length === 1 ? "" : "s"} \xB7 ${p.images.length} pictures \xB7 ${p.questions.length} questions</p></div>
+      <p class="wingsline">${p.mode === "mini" ? "A mini exhibit" : "An exhibit"} in ${G.wings.length} wing${G.wings.length === 1 ? "" : "s"} \xB7 ${p.images.length} pictures${nActs() ? ` \xB7 ${nActs()} hands-on exhibit${nActs() === 1 ? "" : "s"}` : ""}</p></div>
     <div class="greet"><div class="bubble" id="bubble" aria-live="polite"></div><div class="mascotbig">${mascot(G.calm ? "idle" : "happy")}</div></div>
     <div class="cardbtns"><button class="wbtn gold big" id="enter">Enter the museum \u25B8</button><button class="wbtn" id="back">Choose another subject</button></div>
   </div>`;
@@ -2929,7 +3205,7 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
         el.classList.add("cut");
       }
     }));
-    typeInto($("#bubble"), G.calm ? `This exhibit is about ${p.title}. Take your time: in this museum there are no timers or streaks, and pictures stay covered until you choose to look.` : `Welcome, explorer! Today's exhibit is ${p.title}. ${G.wings.length} wings of pictures, notes and puzzles await. Shall we go in?`);
+    typeInto($("#bubble"), G.calm ? `This exhibit is about ${p.title}. Take your time: in this museum there are no timers or streaks, and pictures stay covered until you choose to look.` : `Welcome, explorer! Today's exhibit is ${p.title}: ${G.wings.length} wings of pictures, notes and hands-on puzzles. Every door is open, so wander wherever you like.`);
     $("#enter").addEventListener("click", () => {
       sound.ambient(ambientKind());
       go(renderRotunda);
@@ -2940,8 +3216,12 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     });
     $("#enter").focus();
   }
-  var isOpen = (i) => i === 0 || !!G.medals[G.wings[i - 1]?.room.id];
-  var allDone = () => G.wings.length > 0 && G.wings.every((w) => G.medals[w.room.id]);
+  var explored = (w) => wingProgress(w, G.visited).stamped;
+  var allExplored = () => G.wings.length > 0 && G.wings.every(explored);
+  var GAME_NAME = { timeline: "Timeline", match: "Fact Match", zoom: "Zoom Detective", words: "Word Hunt", map: "Map Pin", listen: "Listen!" };
+  var nActs = () => G.wings.filter((w) => G.acts?.[w.room.id]).length;
+  var actsSolved = () => G.wings.filter((w) => G.acts?.[w.room.id] && G.visited.has(`${w.room.id}:actwon`)).length;
+  var handsOnShare = () => nActs() ? actsSolved() / nActs() : 1;
   var trunc2 = (s, n) => s.length > n ? s.slice(0, n - 1).trimEnd() + "\u2026" : s;
   function renderRotunda() {
     G.at = "rotunda";
@@ -2956,26 +3236,27 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     const order = [];
     let svgDoors = "", plates = "";
     const doorAt = (i, d, plateX, plateY, plateW) => {
-      const w = G.wings[i], open = isOpen(i), m = G.medals[w.room.id];
+      const w = G.wings[i], m = G.medals[w.room.id];
       svgDoors += d.svg;
-      plates += `<div class="plate" style="left:${plateX}px;top:${plateY}px;width:${plateW}px"><b>Wing ${i + 1}${m ? "" : open ? "" : " \xB7 closed"}</b>${esc2(trunc2(w.room.heading, 34))}</div>`;
+      plates += `<div class="plate" style="left:${plateX}px;top:${plateY}px;width:${plateW}px"><b>Wing ${i + 1}</b>${esc2(trunc2(w.room.heading, 34))}</div>`;
+      if (explored(w)) plates += `<span class="platestamp" style="left:${plateX - 12}px;top:${plateY - 14}px">${stamp(i + 1, true, w.pal.banner)}</span>`;
       if (m) plates += `<span style="position:absolute;left:${plateX + plateW - 12}px;top:${plateY - 14}px;width:22px;height:28px">${ICONS.medal(MEDAL_COLORS[m])}</span>`;
       order.push({ i, d });
     };
     let wi = 0;
     if (sides) {
-      const d = sideDoor("left", 1.1, 1.4, G.wings[0].pal, { locked: !isOpen(0), id: "dl" });
+      const d = sideDoor("left", 1.1, 1.4, G.wings[0].pal, { id: "dl" });
       doorAt(wi++, d, d.box.x + d.box.w / 2 - 54, d.box.y - 44, 108);
     }
     for (let k = 0; k < nb; k++) {
       const cx = 480 - total / 2 + dw / 2 + k * (dw + gap);
       const i = wi++;
-      const d = backDoor(cx, dw, topY, G.wings[i].pal, { locked: !isOpen(i), id: "db" + k });
+      const d = backDoor(cx, dw, topY, G.wings[i].pal, { id: "db" + k });
       doorAt(i, d, cx - 64, topY - 40, 128);
     }
     if (sides) {
       const i = wi++;
-      const d = sideDoor("right", 1.1, 1.4, G.wings[i].pal, { locked: !isOpen(i), id: "dr" });
+      const d = sideDoor("right", 1.1, 1.4, G.wings[i].pal, { id: "dr" });
       doorAt(i, d, d.box.x + d.box.w / 2 - 54, d.box.y - 44, 108);
     }
     const lead = G.img[G.pack.lead.image];
@@ -2993,33 +3274,40 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     <div class="frame hot" id="portrait" style="left:${fl}px;top:${ft}px;width:${lw + 32}px;height:${lh + 32}px"><div class="mat" style="width:${lw + 14}px;height:${lh + 14}px;position:relative">${lead ? `<img src="${esc2(lead.src)}" alt="${esc2(lead.shortCaption || G.pack.title)}"${G.calm && !G.visited.has("portrait") ? ' class="veil"' : ""}>` : `<div class="quote" style="font:700 18px Cinzel,Georgia,serif">${esc2(G.pack.title)}</div>`}</div></div>
     <div class="plate" style="left:330px;top:${ft + lh + 38}px;width:300px;-webkit-line-clamp:1"><b>The ${esc2(trunc2(G.pack.title, 30))} Exhibit</b></div>
     ${plates}
-    <div class="hot go" id="trophy" style="left:400px;top:398px;width:160px;height:200px">${trophy({ locked: !allDone(), won: !!G.grand })}</div>`;
-    hot($("#trophy"), openGrand, () => G.grand ? `Grand Challenge \u2014 your best: ${Math.round(G.grand.pct * 100)}%. Click for your certificate` : allDone() ? "The Grand Challenge \u2014 10 questions, 20 seconds each" : "The Grand Challenge (opens when every wing has a medal)");
+    <div class="hot go" id="trophy" style="left:400px;top:398px;width:160px;height:200px">${trophy({ locked: false, won: !!G.grand })}</div>`;
+    hot($("#trophy"), openGrand, () => G.grand ? `The Grand Challenge (optional) \u2014 your best: ${Math.round(G.grand.pct * 100)}%` : "The Grand Challenge \u2014 an optional quiz show");
     scene.querySelectorAll(".hotp").forEach((p) => {
       const i = +p.dataset.w, w = G.wings[i];
-      hot(p, () => enterWing(i), () => `Wing ${i + 1}: ${w.room.heading}${isOpen(i) ? G.medals[w.room.id] ? ` (${G.medals[w.room.id]} medal)` : " \u2014 click to enter" : " \u2014 closed for now"}`);
+      hot(p, () => enterWing(i), () => {
+        const pr = wingProgress(w, G.visited);
+        return `Wing ${i + 1}: ${w.room.heading} \u2014 ${pr.stamped ? "explored \u2713" : pr.seen ? `${pr.seen} of ${pr.total} things seen` : "click to enter"}`;
+      });
     });
     hot($("#portrait"), openOverview, `${G.pack.title} \u2014 about this exhibit`);
-    const next = G.wings.findIndex((w, i) => isOpen(i) && !G.medals[w.room.id]);
+    const next = G.wings.findIndex((w) => !explored(w));
     if (!G.greeted.has("rotunda")) {
       G.greeted.add("rotunda");
       save();
-      say(`Welcome to the ${trunc2(G.pack.title, 40)} exhibit! Each doorway leads to a wing. Start with Wing 1, \u201C${trunc2(G.wings[0].room.heading, 30)}\u201D, or click the portrait for an introduction.`, cheer("happy", "idle"));
-    } else if (G.grand) {
-      say(`Your certificate is ready \u2014 click the trophy to collect it, or take the Grand Challenge again to raise your rank.`, "happy");
-    } else if (allDone()) {
-      say(cheer("Every wing has its medal! The Grand Challenge trophy in the centre of the rotunda awaits: 10 questions, 20 seconds each.", "Every wing is complete. The Grand Challenge in the centre of the rotunda is the final step."), "happy");
+      say(`Welcome! Every door is open, so wander in any order. Look at everything in a wing to earn its Passport stamp.`, cheer("happy", "idle"));
+    } else if (allExplored()) {
+      say("Every wing explored! Collect your certificate from your Passport.", "happy");
     } else if (next >= 0) {
-      say(`Wing ${next + 1}, \u201C${trunc2(G.wings[next].room.heading, 40)}\u201D, is waiting for you.`, "idle");
+      say(`Still to explore: Wing ${next + 1}, \u201C${trunc2(G.wings[next].room.heading, 40)}\u201D \u2014 or anywhere you like.`, "idle");
     }
   }
   function enterWing(i) {
-    if (!isOpen(i)) {
-      sound.play("wrong");
-      say(`That wing is still being set up. Earn a medal in Wing ${i}, \u201C${trunc2(G.wings[i - 1].room.heading, 36)}\u201D, and its doors will open.`, "oops");
-      return;
-    }
     go(() => renderGallery(i));
+  }
+  function announceStamp(w) {
+    renderGems();
+    if (allExplored()) {
+      sound.play(G.calm ? "gentle" : "fanfare");
+      say(cheer("That completes the museum! Your certificate is waiting in your Passport.", "Every wing is explored. Your certificate is in your Passport."), "happy");
+    } else {
+      sound.play(G.calm ? "gentle" : "gem");
+      const left = G.wings.filter((x) => !explored(x)).length;
+      say(cheer(`Stamped! Wing ${w.i + 1} is explored. ${left} wing${left === 1 ? "" : "s"} still to wander.`, `Wing ${w.i + 1} is explored. ${left} to go.`), "happy");
+    }
   }
   function openOverview() {
     sound.play("page");
@@ -3046,6 +3334,8 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     stage.classList.remove("full");
     const id = w.room.id;
     const caseKey = `${id}:case`, caseSeen = G.visited.has(caseKey), medal = G.medals[id];
+    const actType = G.acts?.[id], actDone = G.visited.has(`${id}:act`);
+    const fx = actType ? { case: 262, act: 486, kiosk: 716 } : { case: 330, kiosk: 698 };
     const xs = w.slots.length === 1 ? [480] : w.slots.length === 2 ? [340, 620] : [262, 480, 698];
     const exit = sideDoor("left", 1.06, 1.32, G.calm ? MUTED(ROTUNDA) : ROTUNDA, { id: "ex", height: 200 });
     let frames = "";
@@ -3071,35 +3361,27 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     <div class="plate" style="left:${exit.box.x + exit.box.w / 2 - 50}px;top:${exit.box.y - 34}px;width:100px;-webkit-line-clamp:1"><b>\u25C2 Rotunda</b></div>
     <div class="banner" style="background:${w.pal.banner}"><small>WING ${i + 1} OF ${G.wings.length}</small>${esc2(trunc2(w.room.heading, 40))}</div>
     ${frames}
-    <div class="hot" id="case" style="left:${330 - 90}px;top:${372 - 12}px;width:180px;height:214px"><svg viewBox="-90 -12 180 214" width="180" height="214">${displayCase(0, 0, { visited: caseSeen })}</svg></div>
-    ${caseSeen ? `<span class="done-star" style="left:${330 + 60}px;top:${372 - 4}px">\u2713</span>` : ""}
-    <div class="hot go" id="kiosk" style="left:${698 - 80}px;top:${356 - 2}px;width:160px;height:230px"><svg viewBox="-80 -2 160 230" width="160" height="230">${kiosk(0, 0, { locked: !caseSeen, done: !!medal })}</svg></div>
-    ${medal ? `<span style="position:absolute;left:${698 + 58}px;top:${348}px;width:30px;height:38px">${ICONS.medal(MEDAL_COLORS[medal])}</span>` : ""}`;
+    <div class="hot" id="case" style="left:${fx.case - 90}px;top:${372 - 12}px;width:180px;height:214px"><svg viewBox="-90 -12 180 214" width="180" height="214">${displayCase(0, 0, { visited: caseSeen })}</svg></div>
+    ${caseSeen ? `<span class="done-star" style="left:${fx.case + 60}px;top:${372 - 4}px">\u2713</span>` : ""}
+    ${actType ? `<div class="hot go" id="handson" style="left:${fx.act - 86}px;top:${392}px;width:172px;height:200px"><svg viewBox="-86 -4 172 200" width="172" height="200">${handsOn(0, 0, { type: actType, done: actDone })}</svg></div>
+      ${G.visited.has(`${id}:actwon`) ? `<span class="done-star" style="left:${fx.act + 50}px;top:${384}px">\u2713</span>` : ""}` : ""}
+    <div class="hot go" id="kiosk" style="left:${fx.kiosk - 80}px;top:${356 - 2}px;width:160px;height:230px"><svg viewBox="-80 -2 160 230" width="160" height="230">${kiosk(0, 0, { done: !!medal })}</svg></div>
+    ${medal ? `<span style="position:absolute;left:${fx.kiosk + 58}px;top:${348}px;width:30px;height:38px">${ICONS.medal(MEDAL_COLORS[medal])}</span>` : ""}`;
     scene.querySelectorAll(".frame.hot").forEach((f) => {
       const slot = w.slots[+f.dataset.k];
       hot(f, () => openExhibit(w, slot), slot.kind === "img" ? `${slot.im.shortCaption || "A picture"} \u2014 click to examine` : slot.kind === "card" ? "Specimen card \u2014 the key facts at a glance" : "A quotation from the archive \u2014 click to read");
     });
     hot($("#exit"), () => go(renderRotunda), "Back to the Rotunda");
     hot($("#case"), () => openNotes(w), `Curator's Notes on \u201C${w.room.heading}\u201D`);
-    hot($("#kiosk"), () => {
-      if (!G.visited.has(caseKey)) {
-        sound.play("wrong");
-        say("The terminal is asleep. Open the glass case and read my notes first \u2014 the questions come from them!", "think");
-        return;
-      }
-      openQuiz(w);
-    }, () => {
-      const a = G.acts?.[w.room.id];
-      const extra = a ? ` \u2014 includes a ${{ timeline: "Timeline", match: "Fact Match", zoom: "Zoom Detective", words: "Word Hunt", map: "Map Pin", listen: "Listen!" }[a]} round` : "";
-      return G.visited.has(caseKey) ? `Quiz terminal${extra}` : "Quiz terminal (open the display case first)";
-    });
+    hot($("#kiosk"), () => openQuiz(w), () => medal ? `Test yourself (optional) \u2014 you hold ${medal === "gold" ? "gold" : `a ${medal} medal`} here` : `Test yourself \u2014 a few optional questions on this wing`);
+    if (actType) hot($("#handson"), () => openHandsOn(w), `Hands-on exhibit: ${GAME_NAME[actType]}${G.visited.has(`${id}:actwon`) ? " \u2713 (play again any time)" : ""}`);
+    const pr = wingProgress(w, G.visited);
     if (!G.greeted.has(id)) {
       G.greeted.add(id);
       save();
-      say(`Welcome to Wing ${i + 1}: \u201C${w.room.heading}\u201D. Examine the paintings, then open the glass case to read my notes. The quiz terminal wakes up once you have.`, "happy");
-    } else if (medal) say(`You earned ${medal === "gold" ? "gold" : `a ${medal} medal`} here. Replay the terminal any time to improve it.`, "idle");
-    else if (caseSeen) say("The quiz terminal is ready when you are.", "idle");
-    else say("Open the glass case for my notes on this wing.", "idle");
+      say(`Welcome to \u201C${trunc2(w.room.heading, 34)}\u201D! Look around, read my notes in the glass case${actType ? `, and have a go at the ${GAME_NAME[actType]} table` : ""}.`, "happy");
+    } else if (pr.stamped) say(actType && !actDone ? `This wing is explored. The ${GAME_NAME[actType]} table is still here if you're curious.` : "This wing is explored. Wander on whenever you like.", "idle");
+    else say(`${pr.total - pr.seen} thing${pr.total - pr.seen === 1 ? "" : "s"} left to look at in this wing${caseSeen ? "" : ", including my notes in the glass case"}.`, "idle");
   }
   function veilPic(im, veil) {
     return `<div class="veilbox"><img src="${esc2(im.src)}" alt="${esc2(im.shortCaption || im.caption || "")}"${veil ? ' class="veil"' : ""}>${veil ? '<button class="wbtn showpic">Show picture</button>' : ""}</div>`;
@@ -3129,17 +3411,22 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     const id = w.room.id;
     const key = slotKey(id, slot);
     const first = !G.visited.has(key);
+    const wasStamped = explored(w);
     if (first) {
       G.visited.add(key);
       addScore(10);
     }
+    const back = () => {
+      renderGallery(w.i);
+      if (!wasStamped && explored(w)) announceStamp(w);
+    };
     if (slot.kind === "card") {
       save();
       openOverlay(`<div class="panel placard" role="dialog" aria-label="Specimen card"><button class="close" data-close aria-label="Close">\u2715</button>
       <div class="pic" style="background:#f4efe1;display:block;padding:30px"><table style="width:100%;border-collapse:collapse;font:16px/1.4 Georgia,serif;color:#2b1d05">${slot.rows.map((r) => `<tr><th style="text-align:left;padding:8px 10px;border-bottom:1px solid #d8c9a2;font:700 13px Cinzel,Georgia,serif;color:#7a2433;width:40%">${esc2(r.label)}</th><td style="padding:8px 10px;border-bottom:1px solid #d8c9a2">${esc2(r.value)}</td></tr>`).join("")}</table></div>
       <div class="txt"><h2>Specimen card</h2><div>The key facts about ${esc2(G.pack.title)}, copied from the article's information box.</div>
       <div class="credit">${esc2(G.pack.credits.text)} <a href="${esc2(G.pack.url)}" target="_blank" rel="noopener">Read the article \u2197</a></div>
-      <div style="display:flex;gap:8px;margin-top:auto"><button class="wbtn gold" data-close>Back to the gallery</button></div></div></div>`, { onClose: () => renderGallery(w.i) });
+      <div style="display:flex;gap:8px;margin-top:auto"><button class="wbtn gold" data-close>Back to the gallery</button></div></div></div>`, { onClose: back });
       return;
     }
     if (slot.kind === "quote") {
@@ -3149,7 +3436,7 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       <div class="pic" style="background:#f4efe1"><div style="font:italic 24px/1.5 Georgia,serif;color:#2b1d05;padding:30px;text-align:center">\u201C${esc2(slot.fact.text)}\u201D</div></div>
       <div class="txt"><h2>From the archive</h2><div>This passage comes from the \u201C${esc2(w.room.heading)}\u201D section of the article.</div>
       <div class="credit">${esc2(G.pack.credits.text)} <a href="${esc2(G.pack.url)}${w.room.anchor ? "#" + esc2(w.room.anchor) : ""}" target="_blank" rel="noopener">Read the section \u2197</a></div>
-      <div style="display:flex;gap:8px;margin-top:auto"><button class="wbtn" id="ra">Read aloud</button><button class="wbtn gold" data-close>Back to the gallery</button></div></div></div>`, { onClose: () => renderGallery(w.i) });
+      <div style="display:flex;gap:8px;margin-top:auto"><button class="wbtn" id="ra">Read aloud</button><button class="wbtn gold" data-close>Back to the gallery</button></div></div></div>`, { onClose: back });
       $("#ra").addEventListener("click", () => readAloud(slot.fact.text));
       return;
     }
@@ -3168,15 +3455,16 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       ${fact ? `<div class="didyou"><b>DID YOU KNOW?</b>${esc2(fact.text)}</div>` : ""}
       <div class="credit">Picture: ${esc2(im.author)} \xB7 ${esc2(im.license)} \xB7 <a href="${esc2(im.page)}" target="_blank" rel="noopener">Wikimedia Commons \u2197</a></div>
       <div style="display:flex;gap:8px;margin-top:auto"><button class="wbtn" id="ra">Read aloud</button><button class="wbtn gold" data-close>Back to the gallery</button></div></div></div>`,
-      { onClose: () => renderGallery(w.i) }
+      { onClose: back }
     );
     $("#ra").addEventListener("click", () => readAloud(`${im.caption || ""}. ${fact ? "Did you know? " + fact.text : ""}`));
     bindVeil();
-    if (first) say(cheer("A fine specimen! That fact is now in your Notebook.", "That fact is now in your Notebook."), "happy");
+    if (first && !explored(w)) say(cheer("A fine specimen! That fact is now in your Notebook.", "That fact is now in your Notebook."), "happy");
   }
   function openNotes(w) {
     const id = w.room.id, key = `${id}:case`;
     const first = !G.visited.has(key);
+    const wasStamped = explored(w);
     if (first) {
       G.visited.add(key);
       addScore(25);
@@ -3194,10 +3482,11 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     <div class="spread"><div class="col">${col(facts.slice(0, 2), 1)}</div>
       <figure class="specimen">${pic ? `${veil ? "" : ""}<img id="spec" src="${esc2(pic.src)}" alt="${esc2(pic.shortCaption || "")}" class="${veil ? "veil" : "plain"}">${veil ? '<button class="wbtn showpic">Show picture</button>' : ""}<figcaption>${esc2(pic.shortCaption || "")}</figcaption>` : `<div class="specimen-empty">${mascot("think")}</div>`}</figure>
       <div class="col">${col(facts.slice(2, 4), 3)}</div></div>
-    <footer><button class="wbtn" id="ra">Read aloud</button><a href="${esc2(G.pack.url)}${w.room.anchor ? "#" + esc2(w.room.anchor) : ""}" target="_blank" rel="noopener">Read the full section \u2197</a><button class="wbtn gold" id="done">To the quiz terminal \u25B8</button></footer></div>`,
+    <footer><button class="wbtn" id="ra">Read aloud</button><a href="${esc2(G.pack.url)}${w.room.anchor ? "#" + esc2(w.room.anchor) : ""}" target="_blank" rel="noopener">Read the full section \u2197</a><button class="wbtn gold" data-close>Back to the gallery</button></footer></div>`,
       { onClose: () => {
         renderGallery(w.i);
-        if (first) say(cheer("Splendid reading! The quiz terminal is awake now \u2014 try it when you are ready.", "Thank you for reading. The quiz terminal is ready when you are."), "happy");
+        if (!wasStamped && explored(w)) announceStamp(w);
+        else if (first) say(cheer("Splendid reading! Those notes are in your Notebook now.", "Those notes are in your Notebook now."), "happy");
       } }
     );
     overlay.querySelectorAll(".showpic").forEach((b) => b.addEventListener("click", () => {
@@ -3212,12 +3501,6 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       }
     });
     $("#ra").addEventListener("click", () => readAloud(facts.map((f) => f.text).join(" ")));
-    $("#done").addEventListener("click", () => {
-      closeOverlay(true);
-      renderGallery(w.i);
-      if (first) say("The quiz terminal is awake.", "happy");
-      openQuiz(w);
-    });
     if (OPTS.autoread) readAloud(`${w.room.heading}. ${facts.map((f) => f.text).join(" ")}`);
   }
   var hintsLeft = () => Math.max(0, HINTS_PER_VISIT - G.hintsUsed);
@@ -3225,27 +3508,38 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     sound.play("click");
     const att = G.attempts[w.room.id] = (G.attempts[w.room.id] || 0) + 1;
     save();
-    runQuiz({ mode: "wing", w, qs: pickQuestions(G.pack, w.room, att, G.key, G.acts?.[w.room.id]), label: `Wing ${w.i + 1}: ${trunc2(w.room.heading, 40)}`, onClose: () => renderGallery(w.i) });
+    const lp = livePack();
+    const qs = pickQuestions(lp, lp.rooms[w.i], att, G.key, null, { count: WING_QUIZ });
+    if (!qs.length) {
+      say("This terminal has no questions to ask about this wing. Enjoy the exhibits instead!", "think");
+      return;
+    }
+    runQuiz({ mode: "wing", w, qs, label: `Wing ${w.i + 1}: ${trunc2(w.room.heading, 40)}`, onClose: () => renderGallery(w.i) });
   }
+  var grandCount = () => Math.min(GRAND.count, livePack().questions.length);
   function openGrand() {
-    if (G.grand) {
-      sound.play("click");
-      openCertificate();
+    sound.play("click");
+    if (grandCount() < 5) {
+      say("This exhibit is too small for a Grand Challenge. Its wings are all there is, and that is plenty!", "think");
       return;
     }
-    if (!allDone()) {
-      sound.play("wrong");
-      const left = G.wings.filter((w) => !G.medals[w.room.id]).length;
-      say(`The Grand Challenge opens once every wing has a medal. ${left} to go!`, "think");
-      return;
-    }
-    startGrand();
+    openOverlay(`<div class="panel book" role="dialog" aria-label="The Grand Challenge" style="width:640px;text-align:center">
+    <button class="close" data-close aria-label="Close">\u2715</button>
+    <div style="display:flex;justify-content:center">${trophy({ locked: false, won: !!G.grand }).replace("<svg ", '<svg style="width:110px;height:138px" ')}</div>
+    <h2 style="margin:4px 0">The Grand Challenge</h2>
+    <p style="margin:6px auto;max-width:500px">An optional quiz show: ${grandCount()} questions from every wing${G.calm ? ", with no time limit" : `, ${GRAND.seconds} seconds each`}. It can raise the rank on your certificate, but you never need it \u2014 the certificate comes from exploring.</p>
+    ${G.grand ? `<p style="margin:4px 0;color:#6b5f48">Your best so far: ${G.grand.correct} of ${G.grand.total}.</p>` : ""}
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:12px"><button class="wbtn" data-close>Not now</button><button class="wbtn gold" id="gostart">Start the challenge \u25B8</button></div></div>`);
+    $("#gostart").addEventListener("click", () => {
+      closeOverlay(true);
+      startGrand();
+    });
   }
   function startGrand() {
     G.grandAttempts++;
     save();
     sound.play("door");
-    const qs = pickGrand(G.pack, { missed: [...G.missed], seen: [...G.seen], key: G.key, attempt: G.grandAttempts });
+    const qs = pickGrand(livePack(), { missed: [...G.missed], seen: [...G.seen], key: G.key, attempt: G.grandAttempts });
     say(G.calm ? `Ten questions from every wing. Take as long as you need.` : cheer(`Ten questions from every wing, 20 seconds each. ${G.missed.size ? "I've included some you missed earlier. " : ""}Good luck!`, `Ten questions from every wing, 20 seconds each.`), "think");
     sound.stopAmbient();
     runQuiz({ mode: "grand", qs, label: "The Grand Challenge", onClose: () => {
@@ -3257,21 +3551,19 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     const grand = mode === "grand";
     const timed = grand && !G.calm;
     const total = qs.length;
-    const st = { i: 0, correct: 0, streak: 0, gained: 0, t0: 0, timer: null, hinted: false, skipped: 0, act: null };
+    const st = { i: 0, correct: 0, streak: 0, gained: 0, t0: 0, timer: null, hinted: false, skipped: 0 };
     const stop = () => {
       if (st.timer) clearInterval(st.timer);
       st.timer = null;
     };
     const done = () => {
       stop();
-      st.act?.stop?.();
       onClose();
     };
     const shell = (inner) => `<div class="panel terminal ${grand ? "grand" : ""}" role="dialog" aria-label="${esc2(label)}"><button class="close noprint" data-close aria-label="Leave terminal">\u2715</button><div class="crt">${inner}</div>
-    <div class="quizfoot"><span style="font:700 12px Tahoma;color:#5d584a;letter-spacing:.1em">${grand ? "GRAND CHALLENGE \xB7 " + GRAND.count + " QUESTIONS" + (timed ? " \xB7 " + GRAND.seconds + " SECONDS EACH" : " \xB7 NO TIME LIMIT") : "WIKIQUEST LEARNING TERMINAL \xB7 MODEL 98"}</span><span style="font:600 13px Jost;color:#5d584a">${esc2(label)}</span></div></div>`;
+    <div class="quizfoot"><span style="font:700 12px Tahoma;color:#5d584a;letter-spacing:.1em">${grand ? "GRAND CHALLENGE \xB7 " + total + " QUESTIONS" + (timed ? " \xB7 " + GRAND.seconds + " SECONDS EACH" : " \xB7 NO TIME LIMIT") : "WIKIQUEST LEARNING TERMINAL \xB7 MODEL 98"}</span><span style="font:600 13px Jost;color:#5d584a">${esc2(label)}</span></div></div>`;
     const ask = () => {
       const q = qs[st.i];
-      if (q.type === "activity") return askActivity(q);
       st.hinted = false;
       const img = q.image ? G.img[q.image] : null;
       const long = q.type === "factOrFib" || q.options.some((o) => o.length > 42);
@@ -3319,62 +3611,6 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
         }, 100);
       }
     };
-    const askActivity = (q) => {
-      openOverlay(shell(`<div class="top"><span>ROUND ${st.i + 1} OF ${total}</span><span>${ACTIVITY_LABEL[q.act.type]}</span><span id="pts">+${st.gained} POINTS</span></div>
-      <h3 style="margin-bottom:10px">${esc2(q.act.title)}</h3><div id="act" class="act act-${q.act.type}"></div><div id="after"></div>`), { onClose: done });
-      st.t0 = performance.now();
-      if (q.act.type === "map") G.mapUsed = true;
-      st.act = renderActivity($("#act"), q.act, {
-        sound,
-        factText: (id) => G.fact[id]?.text,
-        mapImage: async () => {
-          if (G.mapUrl !== void 0) return G.mapUrl;
-          try {
-            const info = await wiki.fileInfo([MAP_FILE], 1024);
-            const ii = info.get(MAP_FILE);
-            G.mapUrl = ii?.thumburl || null;
-            G.mapInfo = ii || null;
-          } catch {
-            G.mapUrl = null;
-          }
-          return G.mapUrl;
-        },
-        onDone: (ok, html) => gradeActivity(q, ok, html)
-      });
-      window.WQ.activeRound = st.act;
-    };
-    const gradeActivity = (q, ok, html) => {
-      const ms = performance.now() - st.t0;
-      let pts2 = 0;
-      if (ok === null) st.skipped++;
-      else if (ok) {
-        st.correct++;
-        st.streak++;
-        pts2 = pointsFor(ms / 3, st.streak, { calm: G.calm }) + (G.calm ? 0 : 50);
-        st.gained += pts2;
-        addScore(pts2);
-        sound.play("correct");
-        sparkle($("#act"));
-      } else {
-        st.streak = 0;
-        sound.play("wrong");
-      }
-      save();
-      $("#pts").textContent = `+${st.gained} POINTS`;
-      $("#after").innerHTML = `<div class="explain"><div class="verdict">${ok === null ? "Round skipped" : ok ? "Well done!" : "Not quite."}${ok ? ` <span class="pts">+${pts2}</span>` : ""}</div>${html}</div>
-      <div style="display:flex;justify-content:flex-end;margin-top:10px"><button class="wbtn gold" id="nextq">${st.i + 1 < total ? "Next question \u25B8" : "See my results \u25B8"}</button></div>`;
-      say(ok ? cheer("A fine piece of detective work!", "Well done.") : ok === null ? "No matter \u2014 on we go." : "A tricky one. The answer is shown on the screen.", ok ? "happy" : "think");
-      $("#nextq").focus();
-      $("#nextq").addEventListener("click", () => {
-        st.act?.stop?.();
-        st.act = null;
-        st.i++;
-        if (st.i < total) {
-          sound.play("click");
-          ask();
-        } else grand ? grandResults() : wingResults();
-      });
-    };
     const answer = (q, k) => {
       stop();
       const ms = performance.now() - st.t0;
@@ -3413,7 +3649,12 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       const bonus = ok ? `<span class="pts">+${pts2}</span>${G.calm ? "" : `<span class="why">100${speedBonus(ms) ? ` + ${speedBonus(ms)} speed` : ""}${streakMult(st.streak) > 1 ? ` \xD7 ${streakMult(st.streak)} streak` : ""}</span>`}` : "";
       const src = q.type === "pictureId" ? `The picture's label reads: \u201C${esc2(q.sourceText || q.answerText)}\u201D` : `From the article: \u201C${esc2(q.sourceText)}\u201D`;
       $("#after").innerHTML = `<div class="explain"><div class="verdict">${ok ? st.streak >= 3 && !G.calm ? `Correct! ${st.streak} in a row!` : "Correct!" : k === -1 ? "Time's up!" : "Not quite."}${bonus}</div>${src} <a href="${esc2(G.pack.url)}${q.anchor ? "#" + esc2(q.anchor) : ""}" target="_blank" rel="noopener" style="color:#9fe0ff">Read more \u2197</a></div>
-      <div style="display:flex;justify-content:flex-end;margin-top:12px"><button class="wbtn gold" id="nextq">${st.i + 1 < total ? "Next question \u25B8" : "See my results \u25B8"}</button></div>`;
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px"><button class="report" id="report" title="Wrong, confusing or unfair? Hide it from now on">\u2691 Report this question</button><button class="wbtn gold" id="nextq">${st.i + 1 < total ? "Next question \u25B8" : "See my results \u25B8"}</button></div>`;
+      $("#report").addEventListener("click", () => {
+        banQuestion(q);
+        $("#report").outerHTML = `<span class="report done">Thank you. That question won't be asked again on this computer.</span>`;
+        say("Thank you for flagging it. I have taken that question out of the museum.", "think");
+      });
       say(ok ? cheer(["Bravo!", "Exactly right!", "Well done!", "Splendid!"][st.i % 4], "Correct.") : k === -1 ? "Out of time \u2014 the answer is in green." : "Not that one \u2014 the right answer is highlighted in green.", ok ? "happy" : "oops");
       $("#nextq").focus();
       $("#nextq").addEventListener("click", () => {
@@ -3434,33 +3675,19 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
         save();
         renderGems();
       }
-      const next = G.wings[w.i + 1];
-      const unlockedNow = improved && !prev && next;
       if (medal) sound.play(G.calm ? "gentle" : improved ? "fanfare" : "gem");
       else sound.play("wrong");
       openOverlay(shell(`<div class="top"><span>RESULTS</span><span>${st.correct} OF ${total - st.skipped} CORRECT</span><span>+${st.gained} POINTS</span></div>
       <div class="medalbig">${medal ? ICONS.medal(MEDAL_COLORS[medal]) : ""}<div><div class="verdict" style="font-size:30px">${medal ? `${medal[0].toUpperCase() + medal.slice(1)} medal!` : "So close!"}</div>
-        <p style="font:17px/1.5 Georgia,serif;max-width:430px">${medal ? `${improved ? "Added to your collection." : `You already hold ${prev === "gold" ? "gold" : `a ${prev} medal`} here.`} ${unlockedNow ? `The doors to Wing ${w.i + 2}, \u201C${esc2(trunc2(next.room.heading, 40))}\u201D, are now open.` : ""}${allDone() && !G.grand ? " Every wing has a medal \u2014 the Grand Challenge is open!" : ""}` : "You need at least half right for a medal. The questions change each time \u2014 have another go!"}</p></div></div>
+        <p style="font:17px/1.5 Georgia,serif;max-width:430px">${medal ? `${improved ? "A quiz medal for your collection." : `You already hold ${prev === "gold" ? "gold" : `a ${prev} medal`} here.`}` : "No medal this time, and no matter: quizzes are just for fun and never block your way. The questions change each time."}</p></div></div>
       <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
         <button class="wbtn" id="again">Try again</button>
-        <button class="wbtn" data-close>Back to the gallery</button>
-        ${allDone() ? '<button class="wbtn gold" id="tograph">To the Grand Challenge \u25B8</button>' : next && isOpen(w.i + 1) ? `<button class="wbtn gold" id="nextw">On to Wing ${w.i + 2} \u25B8</button>` : ""}
+        <button class="wbtn gold" data-close>Back to the gallery</button>
       </div>`), { onClose: done });
-      say(medal ? allDone() ? cheer("Every wing complete! The Grand Challenge awaits in the rotunda.", "Every wing is complete. The Grand Challenge is open in the rotunda.") : unlockedNow ? cheer(`Marvellous! Wing ${w.i + 2} is open.`, `Wing ${w.i + 2} is now open.`) : "Well played." : "Have another look at my notes, then try again.", medal ? "happy" : "think");
+      say(medal ? "Well played." : "No harm done. Wander on, or try again whenever you like.", medal ? "happy" : "idle");
       $("#again").addEventListener("click", () => {
         closeOverlay(true);
         openQuiz(w);
-      });
-      $("#nextw")?.addEventListener("click", () => {
-        closeOverlay(true);
-        go(() => renderGallery(w.i + 1));
-      });
-      $("#tograph")?.addEventListener("click", () => {
-        closeOverlay(true);
-        go(() => {
-          renderRotunda();
-          startGrand();
-        });
       });
     };
     const grandResults = () => {
@@ -3470,26 +3697,213 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       if (best) G.grand = { pct, medal, correct: st.correct, total, when: Date.now() };
       save();
       sound.play(G.calm ? "gentle" : medal ? "fanfare" : "gem");
-      const { rank } = rankFor(G.wings.map((x) => G.medals[x.room.id]), G.grand.pct);
+      const { rank } = currentRank();
       openOverlay(shell(`<div class="top"><span>GRAND CHALLENGE RESULTS</span><span>${st.correct} OF ${total - st.skipped} CORRECT</span><span>+${st.gained} POINTS</span></div>
       <div class="medalbig">${medal ? ICONS.medal(MEDAL_COLORS[medal]) : trophy({ locked: false, won: false }).replace("<svg ", '<svg style="width:110px;height:140px" ')}<div><div class="verdict" style="font-size:30px">${medal ? `Grand ${medal}!` : "Challenge complete!"}</div>
-        <p style="font:17px/1.5 Georgia,serif;max-width:440px">${best ? "Your best result so far." : `Your best is still ${Math.round(G.grand.pct * 100)}%.`} Your rank: <b style="color:#FFC72C">${rank}</b>. Your certificate is ready.</p></div></div>
+        <p style="font:17px/1.5 Georgia,serif;max-width:440px">${best ? "Your best result so far." : `Your best is still ${Math.round(G.grand.pct * 100)}%.`} ${allExplored() ? `Your rank: <b style="color:#FFC72C">${rank}</b>. Your certificate is ready.` : "This counts toward your rank. Explore every wing to collect your certificate."}</p></div></div>
       <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
         <button class="wbtn" id="again">Try the challenge again</button>
-        <button class="wbtn gold" id="cert">Receive your certificate \u25B8</button>
+        ${allExplored() ? '<button class="wbtn gold" id="cert">Receive your certificate \u25B8</button>' : '<button class="wbtn gold" data-close>Back to the rotunda</button>'}
       </div>`), { onClose: done });
-      say(cheer(`A ${rank}! Collect your certificate \u2014 you have earned it.`, `You have completed the exhibit. Your rank: ${rank}.`), "happy");
+      say(allExplored() ? cheer(`A ${rank}! Collect your certificate \u2014 you have earned it.`, `Your rank: ${rank}.`) : "Well played! Wander on whenever you like.", "happy");
       $("#again").addEventListener("click", () => {
         closeOverlay(true);
         startGrand();
       });
-      $("#cert").addEventListener("click", () => {
+      $("#cert")?.addEventListener("click", () => {
         closeOverlay(true);
         renderRotunda();
         openCertificate();
       });
     };
     ask();
+  }
+  var activeRound = null;
+  function openHandsOn(w) {
+    const id = w.room.id, type = G.acts?.[id];
+    if (!type) return;
+    const akey = `${id}:act`;
+    const att = G.attempts[akey] = (G.attempts[akey] || 0) + 1;
+    const wasStamped = explored(w);
+    const act = buildActivity(G.pack, w.room, type, att, G.key);
+    sound.play("click");
+    if (!act) {
+      say("This table is being repaired. Do try the rest of the wing!", "think");
+      return;
+    }
+    if (type === "map") G.mapUsed = true;
+    const stopRound = () => {
+      activeRound?.stop?.();
+      activeRound = null;
+    };
+    openOverlay(
+      `<div class="panel terminal handson" role="dialog" aria-label="Hands-on exhibit: ${esc2(ACTIVITY_LABEL[type])}"><button class="close noprint" data-close aria-label="Leave the table">\u2715</button><div class="crt">
+      <div class="top"><span>HANDS-ON EXHIBIT</span><span>${esc2(ACTIVITY_LABEL[type])}</span><span>WING ${w.i + 1}</span></div>
+      <h3 style="margin-bottom:10px">${esc2(act.title)}</h3><div id="act" class="act act-${type}"></div><div id="after"></div></div>
+    <div class="quizfoot"><span style="font:700 12px Tahoma;color:#3b2408;letter-spacing:.1em">PLAY AS OFTEN AS YOU LIKE \xB7 A NEW PUZZLE EACH TIME</span><span style="font:600 13px Jost;color:#3b2408">${esc2(trunc2(w.room.heading, 40))}</span></div></div>`,
+      { onClose: () => {
+        stopRound();
+        renderGallery(w.i);
+      } }
+    );
+    const t0 = performance.now();
+    activeRound = renderActivity($("#act"), act, {
+      sound,
+      factText: (fid) => G.fact[fid]?.text,
+      mapImage: async () => {
+        if (G.mapUrl !== void 0) return G.mapUrl;
+        try {
+          const info = await wiki.fileInfo([MAP_FILE], 1024);
+          const ii = info.get(MAP_FILE);
+          G.mapUrl = ii?.thumburl || null;
+          G.mapInfo = ii || null;
+        } catch {
+          G.mapUrl = null;
+        }
+        return G.mapUrl;
+      },
+      onDone: (ok, html) => {
+        G.visited.add(akey);
+        let pts2 = 0;
+        if (ok && !G.visited.has(`${id}:actwon`)) {
+          G.visited.add(`${id}:actwon`);
+          pts2 = G.calm ? 100 : 100 + Math.max(0, Math.round(50 * (1 - (performance.now() - t0) / 6e4)));
+          addScore(pts2);
+        }
+        save();
+        if (ok) {
+          sound.play("correct");
+          if (!G.calm) sparkle($("#act"));
+        } else if (ok === false) sound.play("wrong");
+        $("#after").innerHTML = `<div class="explain"><div class="verdict">${ok === null ? "Skipped" : ok ? "Well done!" : "Nearly!"}${pts2 ? ` <span class="pts">+${pts2}</span>` : ""}</div>${html}</div>
+        <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:10px"><button class="wbtn" id="replay">Play again</button><button class="wbtn gold" data-close>Back to the gallery</button></div>`;
+        $("#replay").addEventListener("click", () => {
+          stopRound();
+          closeOverlay(true);
+          openHandsOn(w);
+        });
+        say(ok ? cheer("A fine piece of detective work!", "Well done.") : ok === null ? "No matter. There is plenty more to see." : "A tricky one! Have another go, or wander on.", ok ? "happy" : "idle");
+        if (!wasStamped && explored(w)) renderGems();
+      }
+    });
+    window.WQ.activeRound = activeRound;
+    window.WQ.activeAct = act;
+  }
+  function openPassport() {
+    if (!G.pack) return;
+    sound.play("page");
+    const done = G.wings.filter(explored).length;
+    const rows = G.wings.map((w) => {
+      const pr = wingProgress(w, G.visited), a = G.acts?.[w.room.id], m = G.medals[w.room.id];
+      const extras = [a ? `${GAME_NAME[a]}: ${G.visited.has(`${w.room.id}:actwon`) ? "solved \u2713" : G.visited.has(`${w.room.id}:act`) ? "tried" : "not tried"}` : "", m ? `${m} quiz medal` : ""].filter(Boolean).join(" \xB7 ");
+      return `<button class="pprow" data-w="${w.i}"><span class="ppstamp">${stamp(w.i + 1, pr.stamped, w.pal.banner)}</span>
+      <span class="pptxt"><b>${esc2(trunc2(w.room.heading, 44))}</b><small>${pr.stamped ? "Explored" : `${pr.seen} of ${pr.total} things seen`}${extras ? ` \xB7 ${esc2(extras)}` : ""}</small></span><span class="ppgo">Walk there \u25B8</span></button>`;
+    }).join("");
+    openOverlay(`<div class="panel book passport" role="dialog" aria-label="Museum passport"><button class="close" data-close aria-label="Close">\u2715</button>
+    <h2>Museum Passport</h2>
+    <p style="margin:0 0 10px;color:#6b5f48">Look at everything in a wing (its pictures and the Curator's Notes) to earn its stamp. Hands-on tables, quiz terminals and the Grand Challenge are optional extras that raise your rank.</p>
+    <div class="pprows">${rows}</div>
+    <div style="display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:14px;flex-wrap:wrap">
+      <span style="font:600 14px Jost,sans-serif">${done} of ${G.wings.length} wings explored${done === G.wings.length ? ` \xB7 rank so far: ${currentRank().rank}` : ""}</span>
+      <span style="display:flex;gap:8px"><button class="wbtn" id="ppprint" title="A printable worksheet with an answer key">Classroom printout</button><button class="wbtn" id="ppgrand">Grand Challenge (optional)</button>
+      <button class="wbtn gold" id="ppcert" ${done === G.wings.length ? "" : "disabled"}>${done === G.wings.length ? "Collect your certificate \u25B8" : `Certificate: ${G.wings.length - done} wing${G.wings.length - done === 1 ? "" : "s"} to go`}</button></span></div></div>`);
+    overlay.querySelectorAll(".pprow").forEach((b) => b.addEventListener("click", () => {
+      const i = +b.dataset.w;
+      closeOverlay(true);
+      go(() => renderGallery(i));
+    }));
+    $("#ppgrand").addEventListener("click", () => {
+      closeOverlay(true);
+      openGrand();
+    });
+    $("#ppprint").addEventListener("click", openWorksheet);
+    $("#ppcert").addEventListener("click", () => {
+      closeOverlay(true);
+      openCertificate();
+    });
+  }
+  function worksheetHTML() {
+    const p = G.pack, lp = livePack();
+    const date = (/* @__PURE__ */ new Date()).toLocaleDateString(void 0, { year: "numeric", month: "long", day: "numeric" });
+    const used = /* @__PURE__ */ new Map();
+    let n = 0;
+    const key = [];
+    const wings = G.wings.map((w) => {
+      const pic = w.slots.find((x) => x.kind === "img")?.im;
+      if (pic) used.set(pic.id, pic);
+      const facts = w.room.discovery.map((id) => G.fact[id]).filter(Boolean).slice(0, 4);
+      const qs = pickQuestions(lp, lp.rooms[w.i], 1, "worksheet", null, { count: 4 });
+      const qhtml = qs.map((q) => {
+        n++;
+        const im = q.image ? G.img[q.image] : null;
+        if (im) used.set(im.id, im);
+        key.push({ n, letter: "ABCD"[q.answer], text: q.answerText, src: q.sourceText || "" });
+        return `<li class="q"><div class="stem">${q.type === "factOrFib" ? "Which of these is true?" : esc2(q.stem).replace("_____", '<span class="blank"></span>')}</div>
+        ${im ? `<img class="qimg" src="${esc2(im.src)}" alt="">` : ""}
+        <ol class="opts" type="A">${q.options.map((o) => `<li>${esc2(o)}</li>`).join("")}</ol></li>`;
+      }).join("");
+      const start = n - qs.length + 1;
+      return `<section class="wing"><h2><span>Wing ${w.i + 1}</span>${esc2(w.room.heading)}</h2>
+      <div class="cols">${pic ? `<figure><img src="${esc2(pic.src)}" alt=""><figcaption>${esc2(pic.shortCaption || "")}</figcaption></figure>` : ""}
+      <div><h3>Key facts</h3><ul class="facts">${facts.map((f) => `<li>${esc2(f.text)}</li>`).join("")}</ul></div></div>
+      ${qs.length ? `<h3>Questions</h3><ol class="qs" start="${start}">${qhtml}</ol>` : ""}</section>`;
+    }).join("");
+    const lead = G.img[p.lead.image];
+    if (lead) used.set(lead.id, lead);
+    return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>${esc2(p.title)} \u2014 WikiQuest worksheet</title>
+<style>
+@page{margin:16mm}
+body{font:12pt/1.45 Georgia,serif;color:#111;max-width:760px;margin:24px auto;padding:0 16px}
+header{border-bottom:3px double #1B2A6B;padding-bottom:8px;margin-bottom:14px}
+.brand{font:700 9pt Arial,sans-serif;letter-spacing:.2em;color:#7a2433}
+h1{font:700 24pt Georgia,serif;margin:4px 0;color:#1B2A6B}
+.desc{font-style:italic;color:#444;margin:0}
+.who{display:flex;gap:24px;margin-top:12px;font:11pt Arial,sans-serif}.who span{flex:1;border-bottom:1px solid #333;padding-bottom:2px}
+.intro{display:flex;gap:16px;align-items:flex-start}.intro img{width:180px;max-height:150px;object-fit:contain;border:1px solid #ccc}
+.how{font:10.5pt Arial,sans-serif;background:#f3f0e6;border-left:4px solid #c9a23a;padding:6px 10px;margin:10px 0}
+.wing{margin-top:18px}
+h2{break-after:avoid}.cols{break-inside:avoid}
+h2{font:700 15pt Georgia,serif;color:#1B2A6B;border-bottom:1px solid #999;margin:0 0 6px}h2 span{font:700 9pt Arial,sans-serif;letter-spacing:.15em;color:#7a2433;margin-right:10px;text-transform:uppercase}
+h3{font:700 10pt Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#555;margin:8px 0 4px}
+.cols{display:flex;gap:14px;align-items:flex-start}
+figure{margin:0;width:170px;flex:none}figure img{width:170px;max-height:140px;object-fit:contain;border:1px solid #ccc}figcaption{font:9pt Arial,sans-serif;color:#555}
+.facts{margin:0;padding-left:18px}.facts li{margin-bottom:3px}
+.qs{padding-left:22px}.q{margin-bottom:10px;break-inside:avoid}
+.stem{font-weight:bold}.blank{display:inline-block;min-width:90px;border-bottom:1px solid #111}
+.opts{margin:3px 0 0;padding-left:22px;columns:2;column-gap:24px}.opts li{margin-bottom:2px}
+.qimg{display:block;max-width:180px;max-height:110px;margin:4px 0;border:1px solid #ccc}
+.answers{break-before:page;margin-top:24px}.answers ol{padding-left:22px}.answers li{margin-bottom:5px}.answers small{display:block;color:#555;font-size:9.5pt}
+.credits{font:9pt Arial,sans-serif;color:#444;margin-top:18px;border-top:1px solid #999;padding-top:6px}
+.bar{position:sticky;top:0;background:#1B2A6B;color:#fff;padding:8px 12px;margin:-24px -16px 16px;display:flex;justify-content:space-between;align-items:center;font:11pt Arial,sans-serif}
+.bar button{font:bold 11pt Arial,sans-serif;padding:6px 14px;cursor:pointer}
+@media print{.bar{display:none}body{margin:0;max-width:none}}
+</style></head><body>
+<div class="bar"><span>Classroom worksheet: print it, or save it as a PDF from the print dialog.</span><button onclick="print()">Print</button></div>
+<header><div class="brand">WIKIQUEST '98 \xB7 THE MUSEUM OF EVERYTHING \xB7 CLASSROOM WORKSHEET</div>
+<h1>${esc2(p.title)}</h1>${p.description ? `<p class="desc">${esc2(p.description)}</p>` : ""}
+<div class="who"><span>Name:</span><span>Class:</span><span>Date:</span></div></header>
+<div class="intro">${lead ? `<img src="${esc2(lead.src)}" alt="">` : ""}<p>${esc2(p.lead.summary)}</p></div>
+<p class="how">Read the key facts for each wing, then answer its questions by circling a letter. Every answer can be found in the facts or in the article. ${n} questions in all.</p>
+${wings}
+<section class="answers"><h2><span>Teacher</span>Answer key</h2><ol>${key.map((k) => `<li><b>${k.letter}</b> \u2014 ${esc2(k.text)}${k.src ? `<small>Source: \u201C${esc2(k.src)}\u201D</small>` : ""}</li>`).join("")}</ol>
+<div class="credits"><b>Credits.</b> Text adapted from the Wikipedia article \u201C${esc2(p.title)}\u201D (${p.url}), revision ${p.revId}, by Wikipedia contributors, licensed CC BY-SA 4.0; this worksheet is shared under the same licence. Pictures from Wikimedia Commons: ${[...used.values()].map((im) => `${esc2(im.file.replace(/^File:/, ""))} by ${esc2(im.author)} (${esc2(im.license)})`).join("; ")}. Made with WikiQuest '98 on ${date}.</div></section>
+</body></html>`;
+  }
+  function openWorksheet() {
+    sound.play("page");
+    const html = worksheetHTML();
+    const url = URL.createObjectURL(new Blob([html], { type: "text/html" }));
+    const win = window.open(url, "_blank");
+    if (!win) {
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${G.pack.title.replace(/[^\w ]+/g, "").trim() || "exhibit"} worksheet.html`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
+    say("Your classroom worksheet is ready: key facts, questions and an answer key on its own page.", "happy");
+    setTimeout(() => URL.revokeObjectURL(url), 6e4);
   }
   function openMap() {
     if (!G.pack) return;
@@ -3510,17 +3924,17 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
       <text x="${cx}" y="${cy + 16}" text-anchor="middle" font-family="Jost,sans-serif" font-size="12" fill="#6b4a22">${esc2(trunc2(G.pack.title, 22))}</text>
       ${G.at === "rotunda" ? `<circle cx="${cx}" cy="${cy + 36}" r="7" fill="#D62828"/>` : ""}
       ${rooms.map((r) => {
-      const open = isOpen(r.i), m = G.medals[r.w.room.id];
-      return `<g class="${open ? "hotp" : ""}" data-w="${r.i}" style="${open ? "cursor:pointer" : ""}">
-          <rect x="${r.x - 76}" y="${r.y - 34}" width="152" height="68" rx="6" fill="${open ? r.w.pal.wall : "#9a9384"}" stroke="#2b1d05" stroke-width="2"/>
-          <text x="${r.x}" y="${r.y - 12}" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-weight="700" font-size="12" fill="#fff8dc">WING ${r.i + 1}${open ? "" : " \xB7 CLOSED"}</text>
+      const m = G.medals[r.w.room.id], ex = explored(r.w);
+      return `<g class="hotp" data-w="${r.i}" style="cursor:pointer">
+          <rect x="${r.x - 76}" y="${r.y - 34}" width="152" height="68" rx="6" fill="${r.w.pal.wall}" stroke="#2b1d05" stroke-width="2"/>
+          <text x="${r.x}" y="${r.y - 12}" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-weight="700" font-size="12" fill="#fff8dc">WING ${r.i + 1}${ex ? " \u2713" : ""}</text>
           <text x="${r.x}" y="${r.y + 6}" text-anchor="middle" font-family="Jost,sans-serif" font-size="12.5" fill="#fff">${esc2(trunc2(r.w.room.heading, 21))}</text>
           ${m ? `<g transform="translate(${r.x + 52},${r.y - 50})">${ICONS.medal(MEDAL_COLORS[m]).replace("<svg ", '<svg width="24" height="30" ')}</g>` : ""}
           ${r.i === here ? `<text x="${r.x}" y="${r.y + 26}" text-anchor="middle" font-family="Jost,sans-serif" font-size="11" fill="#FFC72C">\u25CF You are here</text>` : ""}
         </g>`;
     }).join("")}
     </svg>
-    <p style="margin:6px 0 0">Click an open wing to walk there. Wings open in order as you earn medals.</p></div>`);
+    <p style="margin:6px 0 0">Click any wing to walk there. \u2713 marks a wing you've fully explored.</p></div>`);
     overlay.querySelectorAll("g.hotp").forEach((g) => g.addEventListener("click", () => {
       const i = +g.dataset.w;
       closeOverlay(true);
@@ -3533,16 +3947,18 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     const groups = G.wings.map((w) => ({ w, facts: w.room.facts.filter((id) => G.notebook.has(id)).map((id) => G.fact[id]) })).filter((g) => g.facts.length);
     const count = groups.reduce((a, g) => a + g.facts.length, 0);
     openOverlay(`<div class="panel book" role="dialog" aria-label="Field notebook"><button class="close" data-close aria-label="Close">\u2715</button>
-    <h2>Field Notebook <button class="wbtn" id="cred" style="float:right;margin-right:44px;min-height:34px;font-size:13px">Credits</button></h2><p style="margin:0;color:#6b5f48">${count ? `${count} fact${count === 1 ? "" : "s"} collected in the ${esc2(G.pack.title)} exhibit.` : "Empty so far. Examine paintings and open the display cases to collect facts."}</p>
+    <h2>Field Notebook <span style="float:right;margin-right:44px;display:flex;gap:8px"><button class="wbtn" id="wsheet" style="min-height:34px;font-size:13px">Classroom printout</button><button class="wbtn" id="cred" style="min-height:34px;font-size:13px">Credits</button></span></h2><p style="margin:0;color:#6b5f48">${count ? `${count} fact${count === 1 ? "" : "s"} collected in the ${esc2(G.pack.title)} exhibit.` : "Empty so far. Examine paintings and open the display cases to collect facts."}</p>
     ${groups.map((g) => `<h3>Wing ${g.w.i + 1}: ${esc2(g.w.room.heading)}</h3><ul>${g.facts.map((f) => `<li>${esc2(f.text)}</li>`).join("")}</ul>`).join("")}</div>`);
     $("#cred").addEventListener("click", () => openCredits(openNotebook));
+    $("#wsheet").addEventListener("click", openWorksheet);
   }
+  var currentRank = () => rankFor({ handsOn: handsOnShare(), medals: G.wings.map((w) => G.medals[w.room.id]), grandPct: G.grand?.pct || 0 });
   function openCertificate() {
-    if (!G.grand) {
-      openGrand();
+    if (!allExplored()) {
+      openPassport();
       return;
     }
-    const { rank } = rankFor(G.wings.map((w) => G.medals[w.room.id]), G.grand.pct);
+    const { rank } = currentRank();
     const lead = G.img[G.pack.lead.image];
     const name = store.get("wq98:name", "");
     const date = (/* @__PURE__ */ new Date()).toLocaleDateString(void 0, { year: "numeric", month: "long", day: "numeric" });
@@ -3556,9 +3972,9 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     <div style="font:700 24px Cinzel,Georgia,serif;color:#1B2A6B;margin:4px 0">${esc2(G.pack.title)} Exhibit</div>
     ${lead ? `<img src="${esc2(lead.src)}" alt="">` : ""}
     <div>and is hereby awarded the rank of</div><div class="rank">${rank}</div>
-    <div class="meta">${G.score.toLocaleString()} knowledge points \xB7 Grand Challenge ${G.grand.correct}/${G.grand.total} \xB7 wing medals: ${G.wings.map((w) => G.medals[w.room.id] || "\u2014").join(", ")} \xB7 ${date}</div>
+    <div class="meta">${G.score.toLocaleString()} knowledge points \xB7 ${G.notebook.size} facts collected${nActs() ? ` \xB7 hands-on exhibits ${actsSolved()}/${nActs()}` : ""}${Object.keys(G.medals).length ? ` \xB7 quiz medals ${Object.keys(G.medals).length}` : ""}${G.grand ? ` \xB7 Grand Challenge ${G.grand.correct}/${G.grand.total}` : ""} \xB7 ${date}</div>
     <svg class="seal" viewBox="0 0 100 100" aria-hidden="true"><g fill="#a3182c">${Array.from({ length: 24 }, (_, k) => `<circle cx="${50 + 44 * Math.cos(k * Math.PI / 12)}" cy="${50 + 44 * Math.sin(k * Math.PI / 12)}" r="7"/>`).join("")}<circle cx="50" cy="50" r="42"/></g><circle cx="50" cy="50" r="32" fill="none" stroke="#f3c9cf" stroke-width="2"/><text x="50" y="47" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-size="11" font-weight="700" fill="#fff">WIKIQUEST</text><text x="50" y="61" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-size="11" font-weight="700" fill="#fff">MCMXCVIII</text></svg>
-    <div class="noprint" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px"><button class="wbtn" id="pr">Print</button><button class="wbtn" id="share">Copy replay link</button><button class="wbtn" id="cred">Credits</button><button class="wbtn" id="regrand">Retake challenge</button><button class="wbtn gold" id="newv">Visit another exhibit</button></div>
+    <div class="noprint" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px"><button class="wbtn" id="pr">Print</button><button class="wbtn" id="share">Copy replay link</button><button class="wbtn" id="cred">Credits</button><button class="wbtn" id="regrand">Grand Challenge (optional)</button><button class="wbtn gold" id="newv">Visit another exhibit</button></div>
     <p class="noprint" id="sharemsg" style="font:13px Jost,sans-serif;color:#6b5f48;margin:6px 0 0"></p></div>`);
     $("#nm").addEventListener("input", (e) => store.set("wq98:name", e.target.value));
     $("#pr").addEventListener("click", () => window.print());
@@ -3566,7 +3982,7 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
     $("#cred").addEventListener("click", () => openCredits(openCertificate));
     $("#regrand").addEventListener("click", () => {
       closeOverlay(true);
-      startGrand();
+      openGrand();
     });
     $("#newv").addEventListener("click", () => {
       sound.stopAmbient();
@@ -3695,7 +4111,7 @@ img.veil{filter:blur(16px) grayscale(.6);transform:scale(1.04)}
   var params = new URLSearchParams(location.search);
   renderTitle({});
   if (params.get("page")) visit(params.get("page"), { rev: params.get("rev") || void 0, seed: params.get("seed") != null ? Number(params.get("seed")) : void 0 });
-  window.WQ = { G, visit, wiki, openCertificate, renderRotunda, startGrand, openCredits, replayLink, openQuiz, renderGallery };
+  window.WQ = { worksheetHTML, openWorksheet, G, visit, wiki, openCertificate, renderRotunda, startGrand, openGrand, openCredits, replayLink, openQuiz, openHandsOn, openPassport, renderGallery, wingProgress };
 })();
 </script>
 </body>
